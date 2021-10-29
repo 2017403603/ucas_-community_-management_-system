@@ -1,0 +1,19 @@
+
+sudo apt-get install software-properties-common -y
+sudo apt-add-repository -y ppa:rael-gc/rvm
+sudo apt-get update
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+sudo apt-get install rvm -y
+echo '\nexport PATH="$PATH:/usr/share/rvm/bin"' >> ~/.zshrc
+apt-get install libpq-dev -y
+curl -o /usr/share/rvm/archives/ruby-2.2.10.tar.bz2 https://cache.ruby-china.com/pub/ruby/2.2/ruby-2.2.10.tar.bz2
+exec $SHELL
+rvm install 2.2
