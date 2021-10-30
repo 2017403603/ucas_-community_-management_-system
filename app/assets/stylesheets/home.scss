@@ -1,0 +1,37 @@
+.issue-list-header {
+    border-bottom: 1px solid #ddd;
+    margin-top: 0;
+    margin-bottom: 30px;
+    background: #f5999d;
+    color: #fff;
+    .issue-list-heading {
+      font-size: 2em;
+      font-weight: normal;
+    }
+  }
+  
+  .align{
+      font-family: "museo-sans-condensed";
+      font-size: 20px;
+      text-align:center; 
+  }
+  
+  .home-banner-links {
+    position: absolute;
+    left: 160px;
+    top: 280px;
+    .banner-btn {
+      padding: 10px 10px;
+      font-size: 1.2em;
+      font-weight: 300;
+      font-family: "museo-sans-condensed";
+      border-radius: 5px;
+      color: #fff;
+      background: rgba(220,20,60,0.2);
+      border: 1px solid transparent;
+      &:hover {
+        border: 1px solid rgba(0,0,0,0.2);
+      }
+    }
+  }
+  
