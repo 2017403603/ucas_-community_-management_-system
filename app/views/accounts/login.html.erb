@@ -1,0 +1,27 @@
+<div class="login-form-container clearfix">
+  <div class="login-form">
+    <%= form_tag "#" do %>
+      <dl class="form">
+        <dt>
+          <%= label_tag "邮箱" %>
+        </dt>
+        <dd>
+          <%= text_field_tag :email, params[:email] %>
+        </dd>
+      </dl>
+      <dl class="form">
+        <dt>
+          <%= label_tag "密码" %>
+        </dt>
+        <dd>
+          <%= password_field_tag :password, params[:password] %>
+        </dd>
+      </dl>
+      <p><%= submit_tag "登录", :class => "login-button btn btn-primary" %></p>
+      <p></p>
+      <div class="need-signup">
+        <%= link_to "没有账号？注册一个吧！", "/signup" %>
+      </div>
+    <% end %>
+  </div>
+</div>

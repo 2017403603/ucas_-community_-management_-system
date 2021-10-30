@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload'%>
   </head>
 
   <body>
@@ -26,13 +26,13 @@
                 <li><a href="#"><h4 style="font-weight:bold">社团列表</h4></a></li>
                      <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="#">
-                    <span class="glyphicon glyphicon-envelop" style = "color:#3D8FF0;font-weight:bold"></span> 登录
+                <a href="login " style="color:#000000;font-weight:250">
+                    <span class="glyphicon glyphicon-envelop"></span> 登录
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <span class="glyphicon glyphicon-log-out" style="color:#3D8FF0;font-weight:bold"></span> 注册
+                <a href="signup" style="color:#000000;font-weight:250;">
+                    <span class="glyphicon glyphicon-log-out" style="color:#000000"></span> 注册
                 </a>
             </li>
         </ul>
@@ -44,9 +44,6 @@
    
     </div>
 </div>
-
-
-
     <%= yield %>
 
    <footer class="navbar navbar-fixed-bottom text-center bg-primary"  style="background:#3D8FF0"> 
@@ -56,7 +53,8 @@
 
 
 <script>
-
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </script>
 
   </body>

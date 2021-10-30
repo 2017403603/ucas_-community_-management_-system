@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 20211030064422) do
     t.string "name"
     t.string "email"
     t.string "password"
+    t.string "num"
     t.integer "role"
     t.integer "status"
+    t.integer "school"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
