@@ -1,8 +1,8 @@
 <div class="signup-form-container clearfix">
   <div class="signup-form">
-    <%= form_for @account,url:"#" do |f| %>
+    <%= form_for @account, url: "/create_account" do |f| %>
         <dl class="form">
-          <dt><%= f.label :name, "用户名(不多于5个字)" %></dt>
+          <dt><%= f.label :name, "用户名(不多于10个字)" %></dt>
           <dd><%= f.text_field :name %></dd>
         </dl>
         <dl class="form">
@@ -32,7 +32,7 @@
           </dd>
         </dl>
 
-        <p><%= f.submit "注册", :class => " btn btn-primary" , :style=> "background:#3D8FF0;margin-top:20px;border-radius:25px;" %></p>
+        <p><%= f.submit "注册", :class => " login-button btn btn-primary" %></p>
     <% end %>
   </div>
 </div>
