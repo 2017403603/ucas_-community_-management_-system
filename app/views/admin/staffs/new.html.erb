@@ -1,0 +1,120 @@
+<% content_for :css do %>
+  <link href="/css/select2.min.css" rel="stylesheet">
+  <link href="/css/jcDate.css" rel="stylesheet" type="text/css"/>
+<% end %>
+<section class="wrapper">
+  <!-- page start-->
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="panel">
+        <header class="panel-heading">
+          新 增
+        </header>
+        <div class="panel-body">
+          <form class="form-horizontal adminex-form" >
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>用户</label>
+              <div class="col-sm-10">
+                <select id="select2_user" name="user_id" class="form-control"></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>部门</label>
+              <div class="col-sm-10">
+                <select name="department_id" class="form-control">
+
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>职位</label>
+              <div class="col-sm-10">
+                <select name="job_id" class="form-control">
+
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>任职开始</label>
+              <div class="col-sm-10">
+                <input name="start_time" class="form-control jcDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>任职结束</label>
+              <div class="col-sm-10">
+                <input name="end_time" class="form-control jcDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">状态</label>
+              <div class="col-sm-10">
+                <select name="status" class="form-control">
+                  <option value="1">可用</option>
+                  <option value="2">停用</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-primary" id="submit_data" data-url="/admin/staffs">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- page end-->
+</section>
+<% content_for :js do %>
+  <script src="/js/select2.min.js"></script>
+  <script src="/js/jQuery-jcDate.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      $(function (){
+          $(".jcDate").jcDate({
+              IcoClass : "jcDateIco",
+              Event : "click",
+              Speed : 100,
+              Left : 0,
+              Top : 28,
+              format : "-",
+              Timeout : 100
+          });
+      });
+      function userSelect(data) {
+          data.unshift('');
+          $("#select2_user").select2({
+              data: data
+          });//启动select2
+      }
+      var job_html = {};
+      function renderDepartmentWithJob(data) {
+          var department_html = getRenderHtml(data['department_data'],'<option value="{id}">{name}</option>');
+          department_html = '<option value="0">请选择部门</option>' + department_html;
+          $('select[name=department_id]').html(department_html);
+          $.each(data['jobs_data'], function (i, item) {
+              job_html[item[0]['department_id']] = '<option value="0">请选择职位</option>' + getRenderHtml(item,'<option value="{id}">{name}</option>');
+          });
+      }
+      $('select[name=department_id]').change(function () {
+          var department_id = $(this).val();
+          $('select[name=job_id]').html(job_html[department_id] || '');
+      });
+      $('#submit_data').click(function () {
+          var _this            = $(this);
+          var url              = _this.attr('data-url');
+          var data             = {};
+          data['user_id'] = $('select[name=user_id]').val();
+          data['department_id'] = $('select[name=department_id]').val();
+          data['job_id'] = $('select[name=job_id]').val();
+          data['start_time'] = $('input[name=start_time]').val();
+          data['end_time'] = $('input[name=end_time]').val();
+          data['status']       = $('select[name=status]').val();
+          doRequest(_this,url,'POST',data);
+      });
+      doRequest('','/admin/staffs/get_users','GET',{},userSelect);
+      doRequest('','/admin/departments/get_department_with_jobs','GET',{},renderDepartmentWithJob);
+  </script>
+<% end %>

@@ -1,0 +1,118 @@
+<%= content_for :css  do%>
+  <style>
+    .major_detail {
+      background-color: #424F63;
+      color: #fff;
+      display: none;
+      width: 100%;
+    }
+    .table-hover>tbody>.major_detail:hover>td {
+      background-color: #424F63;
+    }
+    .major_detail ul {float: left}
+    .major_detail li{
+      max-width: 300px;
+      float: left;
+      list-style: none;
+      padding: 0 5px;
+    }
+  </style>
+<% end %>
+<div class="row">
+  <div class="col-sm-12">
+    <section class="panel">
+      <header class="panel-heading">
+        学院列表
+        <a href="/admin/academies/new"><button class="btn btn-info" type="button">新增</button></a>
+        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+        </span>
+      </header>
+      <div class="panel-body">
+        <div class="row-fluid">
+          <div class="span6">
+            <div id="dynamic-table_length" class="dataTables_length">
+              <label>
+                <select class="form-control" size="1" aria-controls="dynamic-table" onchange="window.location=this.value;">
+                  <option value="/admin/academies?per_page=10&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "10") ? 'selected' : '' %> >10</option>
+                  <option value="/admin/academies?per_page=25&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "25") ? 'selected' : '' %> >25</option>
+                  <option value="/admin/academies?per_page=50&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "50") ? 'selected' : '' %> >50</option>
+                  <option value="/admin/academies?per_page=100&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "100") ? 'selected' : '' %> >100</option>
+                </select>
+                每页显示条数
+              </label>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="dataTables_filter" id="dynamic-table_filter">
+              <label>搜索： &nbsp&nbsp
+                <input type="text" name="search_key" value="<%= params[:search_key] %>" id="search_list" class="form-control" aria-controls="dynamic-table" placeholder="按名称搜索" data-url="/admin/academies">
+              </label>
+            </div>
+          </div>
+        </div>
+        <table class="table  table-hover general-table">
+          <thead>
+          <tr>
+            <th>名称</th>
+            <th>排序</th>
+            <th>专业</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @academies.each do |e| %>
+          <% majors = get_data_by_pid('academy_id', e.id, Major) %>
+            <tr>
+              <td><%= e.name %></td>
+              <td><%= e.sort %></td>
+              <% if majors.blank? %>
+                <td>还未添加</td>
+              <% else  %>
+                <td class="major_td"><%= majors.first.name %>...&nbsp<img src="/images/details_open.png"></td>
+              <% end %>
+              <td><%= get_dict(:status)[e.status.to_s] %></td>
+              <td><%= e.create_time.to_s[0..18] %></td>
+              <td>
+                <a href="/admin/academies/<%= e.id %>"><span class="label label-success label-mini">查看</span></a>
+                <a href="/admin/academies/<%= e.id %>/edit"><span class="label label-warning label-mini">修改</span></a>
+                <a href="javascript:void(0);" data-url="/admin/academies/<%= e.id %>" class="delete_one"><span class="label label-danger label-mini">删除</span></a>
+              </td>
+            </tr>
+            <tr class="major_detail">
+              <td colspan="6">
+                <ul>
+                  <% majors.each do |major|%>
+                  <li><%= major.name %></li>
+                  <% end %>
+                </ul>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="digg_pagination">
+          <%= will_paginate @academies, :container => false %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<%= content_for :js do %>
+  <script type="text/javascript" charset="utf-8">
+    $('.major_td img').click(function () {
+        var _this = $(this);
+        var src = _this.attr('src');
+        if (src.indexOf('open') != -1) {
+            _this.attr('src', '/images/details_close.png');
+            _this.parent().parent().next('tr').show();
+        } else {
+            _this.attr('src', '/images/details_open.png');
+            _this.parent().parent().next('tr').hide();
+        }
+    });
+  </script>
+<% end %>

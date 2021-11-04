@@ -1,0 +1,33 @@
+<%= content_for :css do %>
+  <style>
+    #content {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    #content .content-list {
+      position: relative;
+    }
+    .list_time {
+      position: absolute;
+      right: 5px;
+    }
+  </style>
+<% end %>
+<div id="content">
+  <hr>
+  <div class="content-list">
+    <ul>
+      <% @attachments.each do |e| %>
+        <li>【文件】
+          <a href="/uploads/attachments/<%= e.random_name %>" class="list_title">
+            <%= e.name%>
+          </a>
+          <span class="list_time"><%= e.create_time.to_s[0..10] %></span>
+        </li>
+      <% end %>
+    </ul>
+    <div class="digg_pagination">
+      <%= will_paginate @attachments, :container => false %>
+    </div>
+  </div>
+</div>

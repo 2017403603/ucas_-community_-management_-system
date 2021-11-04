@@ -1,0 +1,101 @@
+<%= content_for :css  do %>
+  <style>
+    .wrap_two>div {
+      float: left;
+      width: 33%;
+    }
+    .wrap_two ul li {
+      list-style: none;
+      font-size: 14px;
+    }
+    .wrap_two li .title{
+      display:inline-block;
+      width: 65%;
+    }
+    .wrap_two li .date{
+      display:inline-block;
+      width: 30%;
+    }
+
+  </style>
+<% end %>
+<% unless @sliders.blank?%>
+  <div class="banner" id="lunbo">
+    <ul>
+      <% @sliders.each do |e| %>
+        <li>
+          <a href="<%= e.href %>">
+            <img src="/uploads/societies/<%= e.random_name %>">
+          </a>
+        </li>
+      <% end %>
+    </ul>
+    <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="/index/images/arrowl.png" alt="prev" width="20" height="35"></a>
+    <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="/index/images/arrowr.png" alt="next" width="20" height="37"></a>
+  </div>
+<% end %>
+<div id="latest">
+  <div class="wrap_one">
+    <div>
+      <img src="/index/images/lastesttitle.png"/>
+      &nbsp;<span>最近更新/LATEST</span>
+    </div>
+  </div>
+  <div class="wrap_two">
+    <div class=".article">
+      <ul>
+        <% @articles.each do |e| %>
+          <li>
+            <span class="title"><a href="/index/article/<%= e.id %>">[公告]<%= e.title[0..10] %></a>...</span>
+            <span class="date"><%= e.create_time.to_s[0..10] %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class=".activity">
+      <ul>
+        <% @activities.each do |e| %>
+          <li>
+            <span class="title"><a href="/index/activity/<%= e.id %>">[活动]<%= e.name[0..10] %></a>...</span>
+            <span class="date"><%= e.create_time.to_s[0..10] %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class=".attachment">
+      <ul>
+        <% @attachments.each do |e| %>
+          <li>
+            <span class="title"><a href="/uploads/societies/<%= e.random_name %>">[文件]<%= e.name[0..10] %></a>...</span>
+            <span class="date"><%= e.create_time.to_s[0..10] %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<%= content_for :js do %>
+  <script src="/index/js/unslider.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(e) {
+          var unslider04 = $('#lunbo').unslider({
+                  dots: true,
+                  speed:700,
+                  delay:3000
+              }),
+              data04 = unslider04.data('unslider');
+          $('.unslider-arrow04').click(function() {
+              var fn = this.className.split(' ')[1];
+              data04[fn]();
+          });
+
+      });
+      $("#lunbo").hover(function () {
+          $('#lunbo .arrow').css('display','none');
+      });
+      //轮播箭头显示
+      $("#lunbo ul img").hover(function () {
+          $('#lunbo .arrow').css('display','block');
+      });
+  </script>
+<% end %>

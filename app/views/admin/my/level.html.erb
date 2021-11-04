@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-sm-12">
+    <section class="panel">
+      <header class="panel-heading">
+        会员列表
+        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+        </span>
+      </header>
+      <div class="panel-body">
+        <div class="row-fluid">
+          <div class="span6">
+            <div id="dynamic-table_length" class="dataTables_length">
+              <label>
+                <select class="form-control" size="1" aria-controls="dynamic-table" onchange="window.location=this.value;">
+                  <option value="/admin/levels?per_page=10&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "10") ? 'selected' : '' %> >10</option>
+                  <option value="/admin/levels?per_page=25&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "25") ? 'selected' : '' %> >25</option>
+                  <option value="/admin/levels?per_page=50&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "50") ? 'selected' : '' %> >50</option>
+                  <option value="/admin/levels?per_page=100&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "100") ? 'selected' : '' %> >100</option>
+                </select>
+                每页显示条数
+              </label>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="dataTables_filter" id="dynamic-table_filter">
+              <label>搜索： &nbsp&nbsp
+                <input type="text" name="search_key" value="<%= params[:search_key] %>" id="search_list" class="form-control" aria-controls="dynamic-table" placeholder="按姓名和学号搜索" data-url="/admin/levels">
+              </label>
+            </div>
+          </div>
+        </div>
+        <table class="table  table-hover general-table">
+          <thead>
+          <tr>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>手机</th>
+            <th>邮箱</th>
+            <th>学院</th>
+            <th>专业</th>
+            <th>开始日期</th>
+            <th>结束日期</th>
+            <th>状态</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @levels.each do |level|%>
+            <tr>
+              <td><%= level.name %></td>
+              <td><%= level.student_no %></td>
+              <td><%= level.phone %></td>
+              <td><%= level.mail %></td>
+              <td><%= (academy = get_data_by_pid('id', level.academy_id, Academy)).blank? ? '' : academy.first.name %></td>
+              <td><%= (major = get_data_by_pid('id', level.major_id, Major)).blank? ? '' : major.first.name %></td>
+              <td><%= level.start_time.to_s[0..10] %></td>
+              <td><%= level.end_time.to_s[0..10] %></td>
+              <td><%= get_dict(:status)[level.status.to_s] %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="digg_pagination">
+          <%= will_paginate @levels, :container => false %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

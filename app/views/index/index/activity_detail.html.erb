@@ -1,0 +1,45 @@
+<%= content_for :css do %>
+  <style>
+    #content {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    #content .content-list {
+      position: relative;
+    }
+    .list_time {
+      position: absolute;
+      right: 5px;
+    }
+    .passage_title p, .passage_info p {
+      text-align: center;
+    }
+    .passage_title p {
+      font-size: 20px;
+    }
+  </style>
+<% end %>
+<input type="text" class="show_content" hidden value="<%= @activity.content %>">
+<div id="content">
+  <hr>
+  <div class="passage">
+    <div class="passage_title">
+      <p><%= @activity.name%></p>
+    </div>
+    <div class="passage_info">
+      <p><span>发布时间：<%= @activity.create_time.to_s[0..10] %></span><span>作者:<%= @activity.create_by %></span></p>
+      <p><span>报名时间：<%= @activity.apply_start_time.to_s[0..18] %> -- <%= @activity.apply_end_time.to_s[0..18] %></span></p>
+    </div>
+    <div class="passage_content">
+
+    </div>
+  </div>
+</div>
+<%= content_for :js do %>
+  <script type="text/javascript" charset="utf-8">
+      window.onload = function () {
+          var content = $('.show_content').val();
+          $('.passage_content').html(content);
+      }
+  </script>
+<% end %>

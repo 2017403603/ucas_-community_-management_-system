@@ -1,0 +1,127 @@
+a:hover{color:#f5413f;}
+
+.container {
+    float: left;
+    width: 640px;
+}
+/* common and top level styles */
+#nav span {
+    display: none;
+}
+#nav, #nav ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#nav {
+    float: left;
+    position: relative;
+    margin-top:25px;
+}
+#nav ul.subs {
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    color: red;
+    font-size: 15px;
+    display: none;
+    left: 150px;
+    position: absolute;
+    top: 54px;
+    width: 120px;
+}
+#nav > li {
+    border-bottom: 5px solid transparent;
+    float: left;
+    text-align: left;
+    padding-right:7px;
+    -moz-transition: all 300ms ease-in-out 0s;
+    -ms-transition: all 300ms ease-in-out 0s;
+    -o-transition: all 300ms ease-in-out 0s;
+    -webkit-transition: all 300ms ease-in-out 0s;
+    transition: all 300ms ease-in-out 0s;
+}
+#nav > li img{position:absolute;top:-26px;}
+#nav > li.no_padding_right{padding-right:0px;}
+#nav li a {
+    display: block;
+    text-decoration: none;
+    -moz-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    -ms-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    -o-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    -webkit-transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    transition: color 450ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    white-space: normal;
+}
+#nav > li > a {
+    color: #95b41f;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    line-height: 30px;
+    padding:0 9px;
+    text-transform: uppercase;
+
+}
+#nav > li > a.no_padding_right{padding-right:0px;}
+#nav > li:hover > a, #nav > a:hover, #nav  li a.active {
+    color: white;
+    background-color: #95b41f;
+    border-radius:2px;
+}
+
+/* submenu */
+#nav li:hover ul.subs {
+    display: block;
+}
+#nav ul.subs > li {
+    color: #fc7268;
+}
+#nav ul.subs > li a {
+    color: #fc7268;
+    line-height: 20px;
+    padding-left: 15px;
+}
+#nav ul li a:hover {
+    color: #F55856;
+}
+#nav ul.subs > li > a {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+#nav ul.subs > li li {
+    float: none;
+    padding-left: 8px;
+    -moz-transition: padding 150ms ease-out 0s;
+    -ms-transition: padding 150ms ease-out 0s;
+    -o-transition: padding 150ms ease-out 0s;
+    -webkit-transition: padding 150ms ease-out 0s;
+    transition: padding 150ms ease-out 0s;
+}
+#nav ul.subs > li li:hover {
+    padding-left: 15px;
+}
+
+/* responsive rules */
+@media all and (max-width : 980px) {
+    #nav > li {
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+    #nav ul.subs {
+        position: relative;
+        top: 0;
+    }
+    #nav li:hover ul.subs {
+        display: none;
+    }
+    #nav li #s1:target + ul.subs,
+    #nav li #s2:target + ul.subs {
+        display: block;
+    }
+
+    #nav ul.subs > li {
+        display: block;
+        width: auto;
+    }
+}

@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="profile-pic text-center">
+          <img alt="" src="/uploads/users/<%= @user.user_pic %>">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-body">
+        <ul class="p-info">
+          <li>
+            <div class="title">学号</div>
+            <div class="desk"><%= @user.student_no %></div>
+          </li>
+          <li>
+            <div class="title">姓名</div>
+            <div class="desk"><%= @user.name %></div>
+          </li>
+          <li>
+            <div class="title">性别</div>
+            <div class="desk"><%= get_dict(:sex)[@user.sex.to_s] %></div>
+          </li>
+          <li>
+            <div class="title">学院</div>
+            <div class="desk"><%= (academy = get_data_by_pid('id', @user.academy_id, Academy)).blank? ? '' : academy.first.name %></div>
+          </li>
+          <li>
+            <div class="title">专业</div>
+            <div class="desk"><%= (major = get_data_by_pid('id', @user.major_id, Major)).blank? ? '' : major.first.name %></div>
+          </li>
+          <li>
+            <div class="title">邮箱</div>
+            <div class="desk"><%= @user.mail %></div>
+          </li>
+          <li>
+            <div class="title">宿舍地址</div>
+            <div class="desk"><%= @user.location %></div>
+          </li>
+          <li>
+            <div class="title">籍贯</div>
+            <div class="desk"><%= @user.native_place %></div>
+          </li>
+          <li>
+            <div class="title">紧急联系人姓名</div>
+            <div class="desk"><%= @user.emer_name %></div>
+          </li>
+          <li>
+            <div class="title">紧急联系人电话</div>
+            <div class="desk"><%= @user.emer_phone %></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<% content_for :css do %>
+  <link href="/css/jcDate.css" rel="stylesheet" type="text/css"/>
+  <style>
+    div.tagsinput input {width: 250px}
+  </style>
+<% end %>
+<section class="wrapper">
+  <!-- page start-->
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="panel">
+        <header class="panel-heading">
+          新 增
+        </header>
+        <div class="panel-body">
+          <form class="form-horizontal adminex-form" >
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>名称</label>
+              <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" placeholder="请输投票名称">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class=" col-md-2 control-label"><i class="bi_tian">*&nbsp</i>选项</label>
+              <div class="col-md-10">
+                <input id="tags_1" type="text" class="tags" value="" style="display: none;">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>详细描述</label>
+              <div id="editor" class="col-sm-10">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>投票开始日期</label>
+              <div class="col-sm-10">
+                <input name="start_time" class="form-control jcDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>投票截止日期</label>
+              <div class="col-sm-10">
+                <input name="end_time" class="form-control jcDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-primary" id="submit_data" data-url="/admin/votes">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- page end-->
+</section>
+<% content_for :js do %>
+  <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+  <script type="text/javascript" src="/js/wangEditor.min.js"></script>
+  <script src="/js/jQuery-jcDate.js"></script>
+  <!--tags input-->
+  <script src="/js/jquery-tags-input/jquery.tagsinput.js"></script>
+  <script src="/js/tagsinput-init.js"></script>
+  <!--bootstrap input mask-->
+  <script type="text/javascript" src="/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+  <script src="/js/scripts.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      $(function () {
+          // 初始化日期控件
+          $(".jcDate").jcDate({
+              IcoClass : "jcDateIco",
+              Event : "click",
+              Speed : 100,
+              Left : 0,
+              Top : 28,
+              format : "-",
+              Timeout : 100
+          });
+          // 初始化编辑器控件
+          var E = window.wangEditor;
+          var editor = new E('#editor');
+          editor.customConfig.uploadImgServer = '/admin/articles/upload';
+          editor.create();
+          $('#submit_data').click(function () {
+              var _this = $(this);
+              var url = _this.attr('data-url');
+              var vote_options = [];
+              $('#tags_1_tagsinput .tag>span').each(function (i,item) {
+                  vote_options[i] = $(item).html().replace(/&nbsp;/g, '');
+              });
+              var data = {};
+              data['name'] = $('input[name=name]').val();
+              data['vote_options'] = vote_options;
+              data['start_time'] = $('input[name=start_time]').val();
+              data['end_time'] = $('input[name=end_time]').val();
+              data['content'] = editor.txt.html();
+              doRequest(_this,url,'POST',data);
+          });
+      });
+  </script>
+<% end %>

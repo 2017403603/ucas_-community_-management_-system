@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="renderer" content="webkit" />
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<%# <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script> %>
+  <link rel="Shortcut Icon" href="/volunteer/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/volunteer/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/volunteer/images/favicon.ico" type="image/x-icon" />
+  <link href="/index/css/main.css" type="text/css" rel="stylesheet" />
+  <link href="/index/css/module.css" type="text/css" rel="stylesheet" />
+  <link href="/css/select2.min.css" rel="stylesheet">
+  <title>首页-大学生社团信息管理系统</title>
+  <style>
+    li {
+      list-style: none;
+    }
+    .left div{
+      display: none;
+    }
+    .left .hover{
+      display: block;
+    }
+    #nav_box {
+      height: 80px;
+    }
+    .container .select2 {
+      margin-top: 25px;
+    }
+    #select2_society {
+      width: 200px;
+    }
+    html, body { font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;}
+    ul, ol { padding: 0;}
+    .banner { position: relative; overflow: auto; text-align: center;}
+    .banner li { list-style: none; }
+    .banner ul li { float: left; }
+    #lunbo { width: 100%;}
+    #lunbo .dots { position: absolute; left: 0; right: 0; bottom: 20px;}
+    #lunbo .dots li
+    {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      text-indent: -999em;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: .4;
+      -webkit-transition: background .5s, opacity .5s;
+      -moz-transition: background .5s, opacity .5s;
+      transition: background .5s, opacity .5s;
+    }
+    #lunbo .dots li.active
+    {
+      background: #fff;
+      opacity: 1;
+    }
+    #lunbo .arrow { position: absolute; top: 160px;display: none}
+    #lunbo #al { left: 280px;}
+    #lunbo #ar { right: 280px;}
+    #lunbo ul img{width: 980px;height: 320px;}
+  </style>
+  <%= yield :css %>
+</head>
+<body>
+<div id="header">
+  <div class="wrap">
+    <span class="head_title">欢迎来到<%= session["index_society"]["name"] %>!</span>
+  </div>
+</div>
+<div id="nav_box">
+  <div class="wrap">
+    <span class="logo">
+      <img src="/uploads/societies/<%= session["index_society"]["logo"] %>" style="width:80px;height: 80px;">
+      <img src="/index/images/logo.png" style="width:240px;height: 80px;">
+    </span>
+    <span class="container">
+      <ul id="nav">
+        <li><a href="/index/index" class="menu-index">首页</a></li>
+        <li><a href="/index/article" class="menu-article">公告通知</a></li>
+        <li><a href="/index/activity" class="menu-activity">活动报名</a></li>
+        <li><a href="/index/attachment" class="menu-attachment">下载中心</a></li>
+        <li><a href="/index/society" class="menu-society">社团简介</a></li>
+      </ul>
+      <select id="select2_society"></select>
+    </span>
+  </div>
+</div>
+<%= yield %>
+<div id="footer">
+  <div class="footer_wrap">
+    <div>
+      <ul class="footer_contact">
+        <li class="footer_contact_one small">联系我们/CONTACT US</li>
+        <li class="footer_contact_two">501工作室技术中心</li>
+      </ul>
+      <ul class="footer_address">
+        <li><span class="footer_contact_three">办公地址：</span><p>华南农业大学华山区学生宿舍17栋501工作室</p></li>
+        <li><span class="footer_contact_three">值班时间：</span><p>周一到周五 11:30-12:30，17:00-18:00</p></li>
+      </ul>
+      <ul class="footer_feedback">
+        <li><span class="footer_contact_three">反馈邮箱：</span><p>809871527@qq.com </p></li>
+        <li><span class="footer_contact_three">微信公众号：</span><p>@待定...</p> </li>
+        <li><span class="footer_contact_three">新浪微博：</span><p>@待定...</p></li>
+      </ul>
+    </div>
+  </div>
+  <div class="link">
+    <select onchange="javascript:window.open(this.options[this.selectedIndex].value,'_blank')">
+      <option value="校内连接">校内链接</option>
+      <option value="http://lxyqingzhi.blog.163.com/">林学与风景园林学院青志</option>
+      <option value="http://isvolunteer.blog.163.com/">数学与信息学院、软件学院青志</option>
+      <option value="http://nongxueqingzhi.blog.163.com/">农学院青志</option>
+      <option value="http://sfs-qingzhi.blog.163.com/">外国语学院青志</option>
+      <option value="http://rwtwsjxc2010.blog.163.com/">人文与法学学院青志</option>
+      <option value="http://lixueqingzhi.blog.163.com/">理学院青志</option>
+      <option value="http://slvolunteer.blog.163.com/">水利与土木工程学院青志</option>
+      <option value="http://zihuanvolunteer.blog.163.com/">资源环境学院青志</option>
+      <option value="http://blog.sina.com.cn/scaufcv">食品学院青志</option>
+      <option value="http://jingguan.qingzhi.blog.163.com/">经济管理学院青志</option>
+      <option value="http://yuanyivolunteer.blog.163.com/">园艺学院青志</option>
+      <option value="http://artqingzhi.blog.163.com/">艺术学院青志</option>
+      <option value="http://blog.163.com/gongcheng_qingzhi/">工程学院青志</option>
+      <option value="http://blog.163.com/shengmingvolunteer@126/">生命科学学院青志</option>
+      <option value="http://blog.163.com/vet_1205/">兽医学院青志</option>
+      <option value="http://blog.sina.com.cn/u/1839325597">动物科学学院青志</option>
+    </select>
+    <select onchange="javascript:window.open(this.options[this.selectedIndex].value,'_blank')">
+      <option value="友情连接">友情链接</option>
+      <option value="http://volunteer-zhujiang.blog.163.com/">华农珠江学院青志</option>
+      <option value="http://www.1205.cn/">广青启智服务总队</option>
+      <option value="http://125cn.net/">广州志愿时</option>
+    </select>
+    <span class="footer_span">推荐浏览器：Chrome,Firefox</span>
+    <span class="footer_span">&copy;2018 designed by 华山17栋 501工作室</span>
+  </div>
+  <div class="clear"></div>
+</div>
+
+</body>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/select2.min.js"></script>
+<script src="/js/my.js"></script>
+<%= yield :js %>
+<script>
+  $(function () {
+      // 导航栏默认选中
+      $(".<%= @menu_name %>").addClass('active');
+      //启动select2
+      function societySelect(data) {
+          data.unshift('切换社团');
+          $("#select2_society").select2({
+              data: data
+          });
+      }
+      $('#select2_society').change(function () {
+          var id = $(this).val();
+          window.location.href = '/index/change/' + id;
+      });
+      doRequest('','/index/get_societies','GET',{},societySelect);
+  });
+</script>
+</html>

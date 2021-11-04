@@ -1,0 +1,111 @@
+<% content_for :css do %>
+  <style>
+    .checkbox li{
+      list-style: none;
+    }
+  </style>
+<% end %>
+<%
+  vote_options = get_data_by_pid('vote_id',@vote.id,VoteOption).map { |e| e.name }
+%>
+<section class="wrapper">
+  <!-- page start-->
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="panel">
+        <header class="panel-heading">
+          查 看
+          <% if @vote.user_id == session['user']['id'] %>
+            &nbsp&nbsp <a href="/admin/votes/<%= @vote.id %>/edit"><button class="btn btn-info" type="button">修改</button></a>
+          <% end %>
+        </header>
+        <div class="panel-body">
+          <form class="form-horizontal adminex-form" >
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>名称</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" value="<%= @vote.name %>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>选项</label>
+              <div class="col-md-10">
+                <%
+                  vote_options = get_data_by_pid('vote_id',@vote.id,VoteOption).map { |e| e.name }
+                %>
+                <textarea type="text" class="form-control"><%= vote_options.join(',') unless vote_options.empty? %></textarea>
+              </div>
+            </div>
+            <input type="text" class="show_content" hidden value="<%= @vote.content %>">
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>内容</label>
+              <div id="editor" class="col-sm-10">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>投票开始日期</label>
+              <div class="col-sm-10">
+                <input name="apply_start_time" value="<%= @vote.start_time.to_s[0..10] %>" class="form-control jcDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>投票截止日期</label>
+              <div class="col-sm-10">
+                <input name="apply_end_time" value="<%= @vote.end_time.to_s[0..10] %>" class="form-control jcDate">
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <div class="col-lg-12">
+      <section class="panel">
+        <header class="panel-heading">
+          投票
+        </header>
+        <div class="panel-body">
+          <form class="form-horizontal adminex-form" >
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>选项</label>
+              <div class="col-md-10 checkbox">
+                <ul>
+                  <% get_data_by_pid('vote_id',@vote.id,VoteOption).each do |e| %>
+                    <li>(已投<%= get_data_by_pid('vote_option_id',e.id,VoteRecord).length %>票)<input type="checkbox" name="vote_options" value="<%= e.id %>"> <%= e.name %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-primary" id="submit_data" data-url="/admin/votes/vote/<%= @vote.id %>">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- page end-->
+</section>
+<% content_for :js do %>
+  <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+  <script type="text/javascript" src="/js/wangEditor.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      $(function (){
+          var content = $('.show_content').val();
+          $('#editor').html(content);
+          $('#submit_data').click(function () {
+              var _this = $(this);
+              var url = _this.attr('data-url');
+              var vote_options = [];
+              var data = {};
+              $.each($('input[name=vote_options]:checked'),function (i,item) {
+                  vote_options[i] = $(item).val();
+              });
+              data['vote_options'] = vote_options;
+              doRequest(_this,url,'POST',data);
+          });
+      });
+  </script>
+<% end %>

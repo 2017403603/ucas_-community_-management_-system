@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-sm-12">
+    <section class="panel">
+      <header class="panel-heading">
+        文章列表
+        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+        </span>
+      </header>
+      <div class="panel-body">
+        <div class="row-fluid">
+          <div class="span6">
+            <div id="dynamic-table_length" class="dataTables_length">
+              <label>
+                <select class="form-control" size="1" aria-controls="dynamic-table" onchange="window.location=this.value;">
+                  <option value="/admin/articles?per_page=10&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "10") ? 'selected' : '' %> >10</option>
+                  <option value="/admin/articles?per_page=25&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "25") ? 'selected' : '' %> >25</option>
+                  <option value="/admin/articles?per_page=50&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "50") ? 'selected' : '' %> >50</option>
+                  <option value="/admin/articles?per_page=100&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "100") ? 'selected' : '' %> >100</option>
+                </select>
+                每页显示条数
+              </label>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="dataTables_filter" id="dynamic-table_filter">
+              <label>搜索： &nbsp&nbsp
+                <input type="text" name="search_key" value="<%= params[:search_key] %>" id="search_list" class="form-control" aria-controls="dynamic-table" placeholder="按名称搜索" data-url="/admin/articles">
+              </label>
+            </div>
+          </div>
+        </div>
+        <table class="table  table-hover general-table">
+          <thead>
+          <tr>
+            <th>标题</th>
+            <th>摘要</th>
+            <th>创建人</th>
+            <th>创建时间</th>
+            <th>修改人</th>
+            <th>修改时间</th>
+            <th>状态</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @articles.each do |e| %>
+            <tr>
+              <td><%= e.title[0..12] %></td>
+              <td><%= e.abstract[0..12] %></td>
+              <td><%= e.create_by %></td>
+              <td><%= e.create_time.to_s[0..18] %></td>
+              <td><%= e.edit_by %></td>
+              <td><%= e.edit_time.to_s[0..18] %></td>
+              <td><%= get_dict(:status)[e.status.to_s] %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="digg_pagination">
+          <%= will_paginate @articles, :container => false %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

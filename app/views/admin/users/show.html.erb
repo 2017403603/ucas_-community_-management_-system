@@ -1,0 +1,89 @@
+<section class="wrapper">
+  <!-- page start-->
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="panel">
+        <header class="panel-heading">
+          查 看&nbsp&nbsp <a href="/admin/users/<%= @user.id %>/edit"><button class="btn btn-info" type="button">修改</button></a>
+        </header>
+        <div class="panel-body">
+          <form class="form-horizontal adminex-form" >
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>学号</label>
+              <div class="col-sm-10">
+                <input type="number" name="student_no" value="<%= @user.student_no %>" class="form-control" placeholder="请输入学号">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>姓名</label>
+              <div class="col-sm-10">
+                <input type="text" name="name" value="<%= @user.name %>" class="form-control" placeholder="请输入姓名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">性别</label>
+              <div class="col-sm-10">
+                <input type="text" name="sex" value="<%= get_dict(:sex)[@user.sex.to_s] %>" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">电话</label>
+              <div class="col-sm-10">
+                <input type="number" name="phone" value="<%= @user.phone %>" class="form-control" placeholder="请输入数字">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">学院</label>
+              <div class="col-sm-10">
+                <input type="text" name="academy_id" value="<%= (academy = get_data_by_pid('id', @user.academy_id, Academy)).blank? ? '' : academy.first.name %>" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">专业</label>
+              <div class="col-sm-10">
+                <input type="text" name="major_id" value="<%= (major = get_data_by_pid('id', @user.major_id, Major)).blank? ? '' : major.first.name %>" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">邮箱</label>
+              <div class="col-sm-10">
+                <input type="email" name="mail" value="<%= @user.mail %>" class="form-control" placeholder="请输入邮箱">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">宿舍地址</label>
+              <div class="col-sm-10">
+                <input type="text" name="location" value="<%= @user.location %>" class="form-control" placeholder="请输入地址">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">籍贯</label>
+              <div class="col-sm-10">
+                <input type="text" name="native_place" value="<%= @user.native_place %>" class="form-control" placeholder="请输入籍贯">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">紧急联系人姓名</label>
+              <div class="col-sm-10">
+                <input type="text" name="emer_name" value="<%= @user.emer_name %>" class="form-control" placeholder="请输入紧急联系人姓名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">紧急联系人电话</label>
+              <div class="col-sm-10">
+                <input type="number" name="emer_phone" value="<%= @user.emer_phone %>" class="form-control" placeholder="请输入紧急联系人电话">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">状态</label>
+              <div class="col-sm-10">
+                <input type="text" name="sex" value="<%= get_dict(:status)[@user.status.to_s] %>" class="form-control" placeholder="请输入姓名">
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- page end-->
+</section>

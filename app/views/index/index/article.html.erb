@@ -1,0 +1,33 @@
+<%= content_for :css do %>
+  <style>
+    #content {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    #content .content-list {
+      position: relative;
+    }
+    .list_time {
+      position: absolute;
+      right: 5px;
+    }
+  </style>
+<% end %>
+<div id="content">
+  <hr>
+  <div class="content-list">
+    <ul>
+      <% @articles.each do |e| %>
+        <li>【公告】
+          <a href="/index/article/<%= e.id %>" class="list_title">
+            <%= e.title%>
+          </a>
+          <span class="list_time"><%= e.create_time.to_s[0..10] %></span>
+        </li>
+      <% end %>
+    </ul>
+    <div class="digg_pagination">
+      <%= will_paginate @articles, :container => false %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-sm-12">
+    <section class="panel">
+      <header class="panel-heading">
+        用户列表
+        <a href="/admin/users/new"><button class="btn btn-info" type="button">新增</button></a>
+        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+        </span>
+      </header>
+      <div class="panel-body">
+        <div class="row-fluid">
+          <div class="span6">
+            <div id="dynamic-table_length" class="dataTables_length">
+              <label>
+                <select class="form-control" size="1" aria-controls="dynamic-table" onchange="window.location=this.value;">
+                  <option value="/admin/users?per_page=10&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "10") ? 'selected' : '' %> >10</option>
+                  <option value="/admin/users?per_page=25&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "25") ? 'selected' : '' %> >25</option>
+                  <option value="/admin/users?per_page=50&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "50") ? 'selected' : '' %> >50</option>
+                  <option value="/admin/users?per_page=100&search_key=<%= params[:search_key] %>" <%= (params[:per_page] == "100") ? 'selected' : '' %> >100</option>
+                </select>
+                每页显示条数
+              </label>
+            </div>
+          </div>
+          <div class="span6">
+            <div class="dataTables_filter" id="dynamic-table_filter">
+              <label>搜索： &nbsp&nbsp
+                <input type="text" name="search_key" value="<%= params[:search_key] %>" id="search_list" class="form-control" aria-controls="dynamic-table" placeholder="按姓名和学号搜索" data-url="/admin/users">
+              </label>
+            </div>
+          </div>
+        </div>
+        <table class="table  table-hover general-table">
+          <thead>
+          <tr>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>手机</th>
+            <th>邮箱</th>
+            <th>学院</th>
+            <th>专业</th>
+            <th>系统管理员</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @users.each do |user|%>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.student_no %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.mail %></td>
+            <td><%= (academy = get_data_by_pid('id', user.academy_id, Academy)).blank? ? '' : academy.first.name %></td>
+            <td><%= (major = get_data_by_pid('id', user.major_id, Major)).blank? ? '' : major.first.name %></td>
+            <td><%= get_dict(:admin)[user.system_admin.to_s] %></td>
+            <td><%= get_dict(:status)[user.status.to_s] %></td>
+            <td><%= user.create_time.to_s[0..18] %></td>
+            <td>
+              <a href="/admin/users/<%= user.id %>"><span class="label label-success label-mini">查看</span></a>
+              <a href="/admin/users/<%= user.id %>/edit"><span class="label label-warning label-mini">修改</span></a>
+              <a href="javascript:void(0);" data-url="/admin/users/<%= user.id %>" class="delete_one"><span class="label label-danger label-mini">删除</span></a>
+            </td>
+          </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="digg_pagination">
+          <%= will_paginate @users, :container => false %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

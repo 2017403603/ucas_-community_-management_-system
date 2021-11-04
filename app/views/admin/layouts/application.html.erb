@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="华南农业大学社团信息管理系统">
+  <meta name="author" content="gwei">
+  <link rel="shortcut icon" href="#" type="image/png">
+  <%= csrf_meta_tags %>
+  <title>华南农业大学社团信息管理系统</title>
+
+  <!--dynamic table-->
+  <link href="/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+  <link href="/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/js/data-tables/DT_bootstrap.css" />
+
+  <link rel="stylesheet" href="/js/jquery-tags-input/jquery.tagsinput.css">
+
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/style-responsive.css" rel="stylesheet">
+
+  <link href="/css/my.css" rel="stylesheet">
+
+  <%= yield :css %>
+  <style>
+    #load_img {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      z-index: 999;
+      display: none;
+    }
+      .menu-left {
+        float: left;
+      }
+    .menu-left span{
+      position: relative;
+      font-size: 16px;
+      top: 17px;
+      left: 20%;
+      font-weight: bold;
+    }
+  </style>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+  <!-- left side start-->
+  <div class="left-side sticky-left-side">
+
+    <!--logo and iconic logo start-->
+    <div class="logo">
+      <a href="index.html"><img src="/images/logo.png" alt=""></a>
+    </div>
+
+    <div class="logo-icon text-center">
+      <a href="index.html"><img src="/images/logo_icon.png" alt=""></a>
+    </div>
+    <!--logo and iconic logo end-->
+
+
+    <div class="left-side-inner">
+
+      <!-- visible to small devices only -->
+      <div class="visible-xs hidden-sm hidden-md hidden-lg">
+        <div class="media logged-user">
+          <img alt="" src="/images/photos/user-avatar.png" class="media-object">
+          <div class="media-body">
+            <h4><a href="#">John Doe</a></h4>
+            <span>"Hello There..."</span>
+          </div>
+        </div>
+
+        <h5 class="left-nav-title">Account Information</h5>
+        <ul class="nav nav-pills nav-stacked custom-nav">
+          <li><a href="javascript:void(0);" data-url="/admin/sessions/destroy" id="logout"><i class="fa fa-sign-out"></i> <span>退 出</span></a></li>
+        </ul>
+      </div>
+
+      <!--sidebar nav start-->
+      <ul class="nav nav-pills nav-stacked custom-nav">
+        <% @list_data.each do |e| %>
+          <li class="menu-list par_menu_li">
+            <a href=""><i class="fa <%= e['css_class'] %>"></i> <span><%= e['name'] %></span></a>
+            <ul class="sub-menu-list">
+              <% e['child'].each do |item|%>
+                <li class="sub_menu_<%= item['id'] %>"><a href="<%= item['url'] %>?menu_id=<%= item['id'] %>"> <%= item['name'] %></a></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+      <!--sidebar nav end-->
+
+    </div>
+  </div>
+  <!-- left side end-->
+
+  <!-- main content start-->
+  <div class="main-content" >
+
+    <!-- header section start-->
+    <div class="header-section">
+
+      <!--toggle button start-->
+      <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+      <!--toggle button end-->
+      <div class="menu-left">
+        <span><%= StuSociety.find(session['society_id']).name %></span>
+      </div>
+      <!--notification menu start -->
+      <div class="menu-right">
+        <ul class="notification-menu" title="切换社团">
+          <li>
+            <a href="#" class="btn btn-default dropdown-toggle info-number" data-toggle="dropdown">
+              <i class="fa fa-tasks"></i>
+              <span class="badge"><%= session['societies'].length %></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-head pull-right">
+              <h5 class="title">我加入的社团</h5>
+              <ul class="dropdown-list user-list">
+                <% session['societies'].each do |item|%>
+                  <li class="new">
+                    <a href="javascript:void(0);" data-url="/admin/my/society_change/<%= item['id'] %>" class="society_change">
+                      <div class="task-info">
+                        <div><%= item['name'] %></div>
+                      </div>
+                    </a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <img src="/uploads/users/<%= session["user"]["user_pic"] %>" alt="" />
+              <%= session['user']['name'] %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+              <li><a href="/admin/sessions/destroy"><i class="fa fa-sign-out"></i> 退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--notification menu end -->
+
+    </div>
+    <!-- header section end-->
+
+    <!-- page heading start-->
+    <div class="page-heading">
+      <ul class="breadcrumb">
+        <li class="active">
+          <%= @par_name %>
+        </li>
+        <li class="active"> <%= @sub_name %> </li>
+      </ul>
+    </div>
+    <!-- page heading end-->
+
+    <!--body wrapper start-->
+    <div class="wrapper">
+      <%= yield %>
+      <img id="load_img" src="/images/loading.gif" alt="">
+    </div>
+    <!--body wrapper end-->
+
+    <!--footer section start-->
+    <footer class="sticky-footer">
+      <%= yield :footer  %>
+    </footer>
+    <!--footer section end-->
+
+  </div>
+  <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/modernizr.min.js"></script>
+<script src="/js/jquery.nicescroll.js"></script>
+
+<!--dynamic table-->
+<script type="text/javascript" language="javascript" src="/js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/js/data-tables/DT_bootstrap.js"></script>
+<!--dynamic table initialization -->
+<script src="/js/dynamic_table_init.js"></script>
+
+<!--common scripts for all pages-->
+<script src="/js/scripts.js"></script>
+<script src="/js/my.js"></script>
+<script type="application/javascript">
+    // 切换社团
+  $('.society_change').click(function () {
+      var _this = $(this);
+      var url = _this.attr('data-url');
+      doRequest(_this,url,'GET',{},jump);
+  });
+    // 控制默认选中菜单
+    var menu_list_id = '<%= session['menu_id'] %>';
+    $('.sub_menu_'+menu_list_id).addClass('active');
+    $('.sub_menu_'+menu_list_id).parents('.par_menu_li').addClass('nav-active');
+    function jump(data) {
+        window.location.href = data['url'];
+    }
+</script>
+<%= yield :js %>
+</body>
+</html>
+
+

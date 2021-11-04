@@ -1,0 +1,81 @@
+<% content_for :css do %>
+  <style>
+    div.tagsinput input {width: 250px}
+  </style>
+<% end %>
+<section class="wrapper">
+  <!-- page start-->
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="panel">
+        <header class="panel-heading">
+          新 增
+        </header>
+        <div class="panel-body">
+          <form class="form-horizontal adminex-form" >
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>名称</label>
+              <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" placeholder="请输入学院名称">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>排序</label>
+              <div class="col-sm-10">
+                <input type="number" name="sort" value="1" class="form-control" placeholder="请输入数字">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class=" col-md-2 control-label">专业</label>
+              <div class="col-md-10">
+                <input id="tags_1" type="text" class="tags" value="" style="display: none;">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>状态</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="status">
+                  <option value="1">可用</option>
+                  <option value="2">停用</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-primary" id="submit_data" data-url="/admin/academies">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- page end-->
+</section>
+<% content_for :js do %>
+  <!--tags input-->
+  <script src="/js/jquery-tags-input/jquery.tagsinput.js"></script>
+  <script src="/js/tagsinput-init.js"></script>
+  <!--bootstrap input mask-->
+  <script type="text/javascript" src="/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+  <script src="/js/scripts.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('#submit_data').click(function () {
+            var _this = $(this);
+            var url = _this.attr('data-url');
+            var majors = [];
+            $('#tags_1_tagsinput .tag>span').each(function (i,item) {
+                majors[i] = $(item).html().replace(/&nbsp;/g, '');
+            });
+            var data = {};
+            data['name'] = $('input[name=name]').val();
+            data['sort'] = $('input[name=sort]').val();
+            data['majors'] = majors;
+            data['status'] = $('select[name=status]').val();
+            doRequest(_this,url,'POST',data);
+        });
+    });
+  </script>
+<% end %>

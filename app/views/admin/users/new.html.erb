@@ -1,0 +1,140 @@
+<section class="wrapper">
+  <!-- page start-->
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="panel">
+        <header class="panel-heading">
+          新 增
+        </header>
+        <div class="panel-body">
+          <form class="form-horizontal adminex-form" >
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>学号</label>
+              <div class="col-sm-10">
+                <input type="number" name="student_no" class="form-control" placeholder="请输入学号">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"><i class="bi_tian">*&nbsp</i>姓名</label>
+              <div class="col-sm-10">
+                <input type="text" name="name"  class="form-control" placeholder="请输入姓名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">性别</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="sex">
+                  <option value="1">男</option>
+                  <option value="2">女</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">电话</label>
+              <div class="col-sm-10">
+                <input type="number" name="phone" class="form-control" placeholder="请输入数字">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">学院</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="academy_id">
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">专业</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="major_id">
+
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">邮箱</label>
+              <div class="col-sm-10">
+                <input type="email" name="mail" class="form-control" placeholder="请输入邮箱">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">宿舍地址</label>
+              <div class="col-sm-10">
+                <input type="text" name="location" class="form-control" placeholder="请输入地址">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">籍贯</label>
+              <div class="col-sm-10">
+                <input type="text" name="native_place" class="form-control" placeholder="请输入籍贯">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">紧急联系人姓名</label>
+              <div class="col-sm-10">
+                <input type="text" name="emer_name" class="form-control" placeholder="请输入紧急联系人姓名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">紧急联系人电话</label>
+              <div class="col-sm-10">
+                <input type="number" name="emer_phone" class="form-control" placeholder="请输入紧急联系人电话">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label">状态</label>
+              <div class="col-sm-10">
+                <select name="status" class="form-control">
+                  <option value="1">可用</option>
+                  <option value="2">停用</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-primary" id="submit_data" data-url="/admin/users">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- page end-->
+</section>
+<% content_for :js do %>
+  <script type="text/javascript" charset="utf-8">
+      $('#submit_data').click(function () {
+          var _this            = $(this);
+          var url              = _this.attr('data-url');
+          var data             = {};
+          data['student_no']   = $('input[name=student_no]').val();
+          data['name']         = $('input[name=name]').val();
+          data['sex']          = $('select[name=sex]').val();
+          data['phone']        = $('input[name=phone]').val();
+          data['academy_id']   = $('select[name=academy_id]').val();
+          data['major_id']     = $('select[name=major_id]').val();
+          data['mail']         = $('input[name=mail]').val();
+          data['location']     = $('input[name=location]').val();
+          data['native_place'] = $('input[name=native_place]').val();
+          data['emer_name']    = $('input[name=emer_name]').val();
+          data['emer_phone']   = $('input[name=emer_phone]').val();
+          data['status']       = $('select[name=status]').val();
+          doRequest(_this,url,'POST',data);
+      });
+      var major_html = {};
+      function renderAcademyWithMajor(data) {
+          var academy_html = getRenderHtml(data['academy_data'],'<option value="{id}">{name}</option>');
+          academy_html = '<option value="0">请选择学院</option>' + academy_html;
+          $('select[name=academy_id]').html(academy_html);
+          $.each(data['major_data'], function (i, item) {
+              major_html[item[0]['academy_id']] = '<option value="0">请选择专业</option>' + getRenderHtml(item,'<option value="{id}">{name}</option>');
+          });
+      }
+      $('select[name=academy_id]').change(function () {
+          var academy_id = $(this).val();
+          $('select[name=major_id]').html(major_html[academy_id] || '');
+      });
+      doRequest('','/admin/academies/get_academy_with_majors','GET',{},renderAcademyWithMajor);
+  </script>
+<% end %>

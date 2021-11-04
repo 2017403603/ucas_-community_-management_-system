@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-sm-12">
+    <section class="panel">
+      <header class="panel-heading">
+        轮播列表
+        <a href="/admin/sliders/new"><button class="btn btn-info" type="button">新增</button></a>
+        <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+        </span>
+      </header>
+      <div class="panel-body">
+        <div class="row-fluid">
+          <div class="span6">
+            <div id="dynamic-table_length" class="dataTables_length">
+              <label>
+                <select class="form-control" size="1" aria-controls="dynamic-table" onchange="window.location=this.value;">
+                  <option value="/admin/sliders?per_page=10" <%= (params[:per_page] == "10") ? 'selected' : '' %> >10</option>
+                  <option value="/admin/sliders?per_page=25" <%= (params[:per_page] == "25") ? 'selected' : '' %> >25</option>
+                  <option value="/admin/sliders?per_page=50" <%= (params[:per_page] == "50") ? 'selected' : '' %> >50</option>
+                  <option value="/admin/sliders?per_page=100" <%= (params[:per_page] == "100") ? 'selected' : '' %> >100</option>
+                </select>
+                每页显示条数
+              </label>
+            </div>
+          </div>
+        </div>
+        <table class="table  table-hover general-table">
+          <thead>
+          <tr>
+            <th>图片</th>
+            <th>链接</th>
+            <th>创建人</th>
+            <th>创建时间</th>
+            <th>排序</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @sliders.each do |e| %>
+            <tr>
+              <td>
+                <img src="/uploads/societies/<%= e.random_name %>" width="196px" height="64px" alt="">
+              </td>
+              <td><%= e.href %></td>
+              <td><%= e.create_by %></td>
+              <td><%= e.create_time.to_s[0..18] %></td>
+              <td><%= e.sort %></td>
+              <td><%= get_dict(:status)[e.status.to_s] %></td>
+              <td>
+                <a href="/admin/sliders/<%= e.id %>/edit"><span class="label label-warning label-mini">修改</span></a>
+                <a href="javascript:void(0);" data-url="/admin/sliders/<%= e.id %>" class="delete_one"><span class="label label-danger label-mini">删除</span></a>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="digg_pagination">
+          <%= will_paginate @sliders, :container => false %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
