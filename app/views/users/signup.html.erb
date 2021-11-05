@@ -84,7 +84,7 @@
 <script src="/js/my.js"></script>
 <script type="text/javascript" charset="utf-8">
 function jumpLogin() {
-      window.location.href = '/index/index'
+      window.location.href = '/admin'
   }
     $('#submit_data').click(function () {
         var _this = $(this);
@@ -97,9 +97,6 @@ function jumpLogin() {
         data['password_confirmation'] = $('input[name=password_confirmation]').val();
         data['sex'] = $('select[name=sex]').val();
         doRequest(_this,url,'POST',data, jumpLogin)
-        // setTimeout(() => {
-        //      window.location.href = '/admin/my'
-        // }, 1000);
     });
 </script>
 
