@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  validates :student_no, format: { with: /\A20[0-9]{10}\z/, message: "学号格式为20开头的12位数字" }
-  validates :name, format: { with: /\A.{1,45}\z/, message: "姓名格式不对" }
+  # validates :student_no, format: { with: /\A20[0-9]{10}\z/, message: "学号格式为20开头的12位数字" }
+  # validates :name, format: { with: /\A.{1,45}\z/, message: "姓名格式不对" }
   validates :sex,
             presence: { message: "性别不能为空" },
             numericality: { only_integer: true, message: "性别格式不对" }

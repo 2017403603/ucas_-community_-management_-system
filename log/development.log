@@ -2015,3 +2015,3008 @@ Processing by UsersController#signup as HTML
 Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 13:48:47 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.4ms)
+Completed 200 OK in 316ms (Views: 5.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-05 13:52:00 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.7ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (2.1ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (59.5ms)
+Completed 200 OK in 125ms (Views: 56.7ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/volunteer/images/favicon.ico" for 127.0.0.1 at 2021-11-05 13:52:01 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/volunteer/images/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 13:52:01 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-05 13:52:06 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-05 13:52:06 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (1.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (1.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (3.2ms)
+Completed 200 OK in 34ms (Views: 4.9ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 13:52:08 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"1976186113@qq.com", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '1976186113@qq.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 13:52:31 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"201430350301", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '201430350301' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStaff Load (4.2ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 1 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 11.1ms)
+
+
+  [1m[36mStuSociety Load (43.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` IN (1, 2, 3)[0m
+Started GET "/admin/my" for 127.0.0.1 at 2021-11-05 13:52:32 +0800
+Processing by Admin::MyController#index as HTML
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (0.9ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (0.5ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (25.0ms)
+  [1m[36mStuSociety Load (2.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 27.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/admin/my/password?menu_id=6" for 127.0.0.1 at 2021-11-05 13:52:38 +0800
+Processing by Admin::MyController#password as HTML
+  Parameters: {"menu_id"=>"6"}
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 6 LIMIT 1[0m
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering admin/my/password.html.erb within admin/layouts/application
+  Rendered admin/my/password.html.erb within admin/layouts/application (1.1ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 30ms (Views: 9.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/admin/users?menu_id=22" for 127.0.0.1 at 2021-11-05 13:52:42 +0800
+Processing by Admin::UsersController#index as HTML
+  Parameters: {"menu_id"=>"22"}
+  [1m[36mMenuList Load (2.7ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (4.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/index.html.erb within admin/layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (1.6ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (0.6ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  [1m[36mAcademy Load (1.8ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (1.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/users/index.html.erb within admin/layouts/application (18.1ms)
+  [1m[36mStuSociety Load (8.6ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 16.5ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2021-11-05 13:52:43 +0800
+Processing by Admin::UsersController#new as HTML
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/new.html.erb within admin/layouts/application
+  Rendered admin/users/new.html.erb within admin/layouts/application (3.4ms)
+  [1m[36mStuSociety Load (2.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 9.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/admin/academies/get_academy_with_majors" for 127.0.0.1 at 2021-11-05 13:52:44 +0800
+Processing by Admin::AcademiesController#get_academy_with_majors as JSON
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (2.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (3.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mAcademy Load (0.8ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`status` = 1 ORDER BY sort[0m
+  [1m[36mMajor Load (1.2ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`academy_id` = 1[0m
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 13:57:23 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 13:58:15 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2021-11-05 13:58:17 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 13:58:34 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 13:58:52 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2021-11-05 13:58:53 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/index" for 127.0.0.1 at 2021-11-05 13:59:03 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 13:59:12 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2021-11-05 13:59:14 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2021-11-05 13:59:28 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 13:59:34 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index/index" for 127.0.0.1 at 2021-11-05 13:59:36 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.5ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.6ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.6ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (12.2ms)
+Completed 200 OK in 17ms (Views: 8.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 13:59:36 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:11:36 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.0ms)
+Completed 200 OK in 30ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:13:20 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:13:49 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:14:12 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:14:33 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:15:32 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:15:54 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:16:18 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:16:31 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:16:43 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:16:56 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 14:17:32 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 37ms (Views: 0.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:21:09 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:22:03 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:22:26 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:23:22 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:23:47 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:24:43 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (6.6ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:25:50 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:26:12 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:26:36 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:26:46 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:27:12 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:27:22 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:27:48 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:28:15 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:28:36 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:28:58 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:29:00 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:29:07 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:30:05 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 14:32:07 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 14:34:13 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 14:36:07 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-05 14:36:19 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (3.3ms)
+Completed 200 OK in 23ms (Views: 6.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 14:36:21 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 14:36:24 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"2222", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '2222' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 14:37:46 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"201430350301", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '201430350301' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 1 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 11.5ms)
+
+
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` IN (1, 2, 3)[0m
+Started GET "/admin/my" for 127.0.0.1 at 2021-11-05 14:37:46 +0800
+Processing by Admin::MyController#index as HTML
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (4.4ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (2.8ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (23.3ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 47ms (Views: 23.0ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/admin/users?menu_id=22" for 127.0.0.1 at 2021-11-05 14:37:48 +0800
+Processing by Admin::UsersController#index as HTML
+  Parameters: {"menu_id"=>"22"}
+  [1m[36mMenuList Load (1.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/index.html.erb within admin/layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (2.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (0.8ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  [1m[36mAcademy Load (2.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.3ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/users/index.html.erb within admin/layouts/application (18.4ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 16.6ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2021-11-05 14:37:51 +0800
+Processing by Admin::UsersController#new as HTML
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/new.html.erb within admin/layouts/application
+  Rendered admin/users/new.html.erb within admin/layouts/application (0.9ms)
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 22ms (Views: 4.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/academies/get_academy_with_majors" for 127.0.0.1 at 2021-11-05 14:37:51 +0800
+Processing by Admin::AcademiesController#get_academy_with_majors as JSON
+  [1m[36mMenuList Load (2.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mAcademy Load (1.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`status` = 1 ORDER BY sort[0m
+  [1m[36mMajor Load (1.1ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`academy_id` = 1[0m
+Completed 200 OK in 31ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/admin/users" for 127.0.0.1 at 2021-11-05 14:38:35 +0800
+Processing by Admin::UsersController#create as JSON
+  Parameters: {"student_no"=>"20212801532900", "name"=>"施哲宇", "sex"=>"1", "phone"=>"", "academy_id"=>"0", "major_id"=>"", "mail"=>"", "location"=>"", "native_place"=>"", "emer_name"=>"", "emer_phone"=>"", "status"=>"1"}
+  [1m[36mMenuList Load (2.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[35m (35.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 70ms (Views: 0.4ms | ActiveRecord: 41.0ms)
+
+
+Started POST "/admin/users" for 127.0.0.1 at 2021-11-05 14:38:42 +0800
+Processing by Admin::UsersController#create as JSON
+  Parameters: {"student_no"=>"202128015329", "name"=>"施哲宇", "sex"=>"1", "phone"=>"", "academy_id"=>"0", "major_id"=>"", "mail"=>"", "location"=>"", "native_place"=>"", "emer_name"=>"", "emer_phone"=>"", "status"=>"1"}
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (74.4ms)[0m  [1m[32mINSERT INTO `users` (`student_no`, `password`, `name`, `create_time`, `update_time`) VALUES ('202128015329', '7c4a8d09ca3762af61e59520943dc26494f8941b', '施哲宇', '2021-11-05 14:38:42', '2021-11-05 14:38:42')[0m
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 132ms (Views: 0.2ms | ActiveRecord: 112.9ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:10:21 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (3.1ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:11:57 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:22:48 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.4ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:23:13 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.3ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:23:24 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:25:46 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:28:07 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (2.7ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index/index" for 127.0.0.1 at 2021-11-05 15:28:53 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.1ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (79.5ms)
+Completed 200 OK in 124ms (Views: 78.7ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 15:28:54 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (3.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:29:13 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.7ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 15:44:48 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 15:44:53 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 15:46:43 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:46:46 +0800
+Processing by UsersController#signup as HTML
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `set_data' for #<UsersController:0x00556e92749568>
+Did you mean?  send_data):
+  
+app/controllers/users_controller.rb:3:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:49:38 +0800
+Processing by UsersController#signup as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:4:in `digest'
+app/controllers/users_controller.rb:4:in `hexdigest'
+app/controllers/users_controller.rb:4:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:49:56 +0800
+Processing by UsersController#signup as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:4:in `digest'
+app/controllers/users_controller.rb:4:in `hexdigest'
+app/controllers/users_controller.rb:4:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:50:48 +0800
+Processing by UsersController#signup as HTML
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `consol' for #<UsersController:0x007fca40167e90>
+Did you mean?  console):
+  
+app/controllers/users_controller.rb:4:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:52:30 +0800
+Processing by UsersController#signup as HTML
+{:create_time=>"2021-11-05 15:52:30 +0800", :update_time=>"2021-11-05 15:52:30 +0800"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:5:in `digest'
+app/controllers/users_controller.rb:5:in `hexdigest'
+app/controllers/users_controller.rb:5:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:52:39 +0800
+Processing by UsersController#signup as HTML
+{:create_time=>"2021-11-05 15:52:39 +0800", :update_time=>"2021-11-05 15:52:39 +0800"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:5:in `digest'
+app/controllers/users_controller.rb:5:in `hexdigest'
+app/controllers/users_controller.rb:5:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:52:53 +0800
+Processing by UsersController#signup as HTML
+{:create_time=>"2021-11-05 15:52:53 +0800", :update_time=>"2021-11-05 15:52:53 +0800"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:5:in `digest'
+app/controllers/users_controller.rb:5:in `hexdigest'
+app/controllers/users_controller.rb:5:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:53:57 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 32ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:55:23 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:55:34 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (49.2ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 15:55:34', '2021-11-05 15:55:34')[0m
+  [1m[35m (6.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 57.2ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 15:55:34', '2021-11-05 15:55:34')):
+  
+app/controllers/users_controller.rb:5:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:56:04 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (23.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 15:56:04', '2021-11-05 15:56:04')[0m
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 463ms (ActiveRecord: 46.3ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 15:56:04', '2021-11-05 15:56:04')):
+  
+app/controllers/users_controller.rb:5:in `signup'
+Started GET "/" for 127.0.0.1 at 2021-11-05 15:56:09 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (19.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.8ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (53.6ms)
+Completed 200 OK in 141ms (Views: 52.9ms | ActiveRecord: 32.0ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 15:56:09 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2021-11-05 15:56:13 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 15:56:17 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 15:56:17', '2021-11-05 15:56:17')[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 15:56:17', '2021-11-05 15:56:17')):
+  
+app/controllers/users_controller.rb:5:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:00:23 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:00:33', '2021-11-05 16:00:33')[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:00:33', '2021-11-05 16:00:33')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/" for 127.0.0.1 at 2021-11-05 16:01:07 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (2.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (4.0ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (58.8ms)
+Completed 200 OK in 100ms (Views: 51.5ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:01:08 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 16ms (Views: 2.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:01:18 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:01:18', '2021-11-05 16:01:18')[0m
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:01:18', '2021-11-05 16:01:18')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/" for 127.0.0.1 at 2021-11-05 16:03:26 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (5.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.3ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.3ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.5ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (56.5ms)
+Completed 200 OK in 375ms (Views: 56.3ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:03:26 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (12.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:03:34 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:03:34', '2021-11-05 16:03:34')[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 6.7ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:03:34', '2021-11-05 16:03:34')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:03:45 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:03:45', '2021-11-05 16:03:45')[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 6.5ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:03:45', '2021-11-05 16:03:45')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:03:46 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:03:46', '2021-11-05 16:03:46')[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:03:46', '2021-11-05 16:03:46')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/" for 127.0.0.1 at 2021-11-05 16:03:57 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (2.8ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (2.8ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.5ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (14.3ms)
+Completed 200 OK in 20ms (Views: 9.7ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:03:58 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.3ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:04:07 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:04:07', '2021-11-05 16:04:07')[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:04:07', '2021-11-05 16:04:07')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:04:47 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:04:47', '2021-11-05 16:04:47')[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:04:47', '2021-11-05 16:04:47')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:05:48 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:48', '2021-11-05 16:05:48')[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:48', '2021-11-05 16:05:48')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:05:49 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:49', '2021-11-05 16:05:49')[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:49', '2021-11-05 16:05:49')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:05:57 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:57', '2021-11-05 16:05:57')[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:57', '2021-11-05 16:05:57')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:05:58 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:58', '2021-11-05 16:05:58')[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:05:58', '2021-11-05 16:05:58')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:06:00 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:06:00', '2021-11-05 16:06:00')[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:06:00', '2021-11-05 16:06:00')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/" for 127.0.0.1 at 2021-11-05 16:06:14 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.5ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (2.5ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.1ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (11.8ms)
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:06:14 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:06:22 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:06:22', '2021-11-05 16:06:22')[0m
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:06:22', '2021-11-05 16:06:22')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:06:45 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:06:45', '2021-11-05 16:06:45')[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:06:45', '2021-11-05 16:06:45')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:07:22 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:07:22', '2021-11-05 16:07:22')[0m
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:07:22', '2021-11-05 16:07:22')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:07:24 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:07:24', '2021-11-05 16:07:24')[0m
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:07:24', '2021-11-05 16:07:24')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:14:51 +0800
+  
+SyntaxError (/home/miuzki/ucas_-community_-management_-system/app/controllers/users_controller.rb:4: syntax error, unexpected '=', expecting ']'
+    data[:student_no = params[:account][:email] 
+                      ^):
+  
+app/controllers/users_controller.rb:4: syntax error, unexpected '=', expecting ']'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:15:24 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (20.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:15:24', '2021-11-05 16:15:24')[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 38.1ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:15:24', '2021-11-05 16:15:24')):
+  
+app/controllers/users_controller.rb:7:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:17:01 +0800
+  [1m[35m (36.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by UsersController#signup as HTML
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:17:11', '2021-11-05 16:17:11')[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.4ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:17:11', '2021-11-05 16:17:11')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:17:27 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users_controller" for 127.0.0.1 at 2021-11-05 16:17:46 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users_controller"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users_controller" for 127.0.0.1 at 2021-11-05 16:17:49 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users_controller"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:18:05 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users_controller" for 127.0.0.1 at 2021-11-05 16:18:06 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users_controller"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users_controller" for 127.0.0.1 at 2021-11-05 16:18:15 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users_controller"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users_controller" for 127.0.0.1 at 2021-11-05 16:18:38 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users_controller"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:18:45 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-11-05 16:18:54 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-11-05 16:19:05 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.2ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.5ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (59.5ms)
+Completed 200 OK in 86ms (Views: 57.6ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:19:06 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (29.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-05 16:19:14 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (2.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (1.1ms)
+Completed 200 OK in 22ms (Views: 2.6ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-05 16:19:17 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"201430350301", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (35.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '201430350301' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 1 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 89ms (Views: 0.2ms | ActiveRecord: 42.2ms)
+
+
+  [1m[36mStuSociety Load (1.1ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` IN (1, 2, 3)[0m
+Started GET "/admin/my" for 127.0.0.1 at 2021-11-05 16:19:17 +0800
+Processing by Admin::MyController#index as HTML
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (3.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (1.8ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (0.4ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (29.9ms)
+  [1m[36mStuSociety Load (6.2ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 66ms (Views: 22.4ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/admin/users?menu_id=22" for 127.0.0.1 at 2021-11-05 16:19:20 +0800
+Processing by Admin::UsersController#index as HTML
+  Parameters: {"menu_id"=>"22"}
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/index.html.erb within admin/layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (0.5ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (1.5ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  [1m[36mAcademy Load (0.4ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (1.5ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.1ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/users/index.html.erb within admin/layouts/application (31.2ms)
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 67ms (Views: 34.4ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2021-11-05 16:19:21 +0800
+Processing by Admin::UsersController#new as HTML
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (3.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/new.html.erb within admin/layouts/application
+  Rendered admin/users/new.html.erb within admin/layouts/application (0.9ms)
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 21ms (Views: 4.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/admin/academies/get_academy_with_majors" for 127.0.0.1 at 2021-11-05 16:19:21 +0800
+Processing by Admin::AcademiesController#get_academy_with_majors as JSON
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (2.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mAcademy Load (0.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`status` = 1 ORDER BY sort[0m
+  [1m[36mMajor Load (0.9ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`academy_id` = 1[0m
+Completed 200 OK in 33ms (Views: 0.5ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/admin/users" for 127.0.0.1 at 2021-11-05 16:19:36 +0800
+Processing by Admin::UsersController#create as JSON
+  Parameters: {"student_no"=>"202020202020", "name"=>"12321", "sex"=>"1", "phone"=>"", "academy_id"=>"0", "major_id"=>"", "mail"=>"", "location"=>"", "native_place"=>"", "emer_name"=>"", "emer_phone"=>"", "status"=>"1"}
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202020202020' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO `users` (`student_no`, `password`, `name`, `create_time`, `update_time`) VALUES ('202020202020', '7c4a8d09ca3762af61e59520943dc26494f8941b', '12321', '2021-11-05 16:19:36', '2021-11-05 16:19:36')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2021-11-05 16:21:04 +0800
+Processing by Admin::UsersController#new as HTML
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/new.html.erb within admin/layouts/application
+  Rendered admin/users/new.html.erb within admin/layouts/application (3.8ms)
+  [1m[36mStuSociety Load (6.5ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 34ms (Views: 8.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/admin/academies/get_academy_with_majors" for 127.0.0.1 at 2021-11-05 16:21:04 +0800
+Processing by Admin::AcademiesController#get_academy_with_majors as JSON
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (5.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[36mAcademy Load (0.3ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`status` = 1 ORDER BY sort[0m
+  [1m[36mMajor Load (2.8ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`academy_id` = 1[0m
+Completed 200 OK in 27ms (Views: 0.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:21:28 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.4ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:21:29 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:21:49 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:22:15 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/users" for 127.0.0.1 at 2021-11-05 16:22:16 +0800
+Processing by Admin::UsersController#create as JSON
+  Parameters: {"name"=>"使者与", "student_no"=>"202128015329003", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (22.2ms)[0m  [1m[32mINSERT INTO `users` (`student_no`, `password`, `name`, `create_time`, `update_time`) VALUES ('202128015329003', '7c4a8d09ca3762af61e59520943dc26494f8941b', '使者与', '2021-11-05 16:22:16', '2021-11-05 16:22:16')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 41ms (Views: 0.3ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/app/views/index/index/index" for 127.0.0.1 at 2021-11-05 16:22:16 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/app/views/index/index/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/app/views/index/index/index" for 127.0.0.1 at 2021-11-05 16:24:09 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/app/views/index/index/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:24:17 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (2.4ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:24:25 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:28:45 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:28:48 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-11-05 16:28:50 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:29:39 +0800
+Processing by UsersController#signup as HTML
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:30:16 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:30:42 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-11-05 16:30:47 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:31:02 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.4ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:33:08 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:33:18 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:33:20 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:33:39 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.1ms)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:33:40 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:33:48 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:33:48', '2021-11-05 16:33:48')[0m
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 8.4ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:33:48', '2021-11-05 16:33:48')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:34:02 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:34:04 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:34:07 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:34:15 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.1ms)
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:34:18 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:41:01 +0800
+Processing by UsersController#signup as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:41:01', '2021-11-05 16:41:01')[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 6.6ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Field 'student_no' doesn't have a default value: INSERT INTO `users` (`create_time`, `update_time`) VALUES ('2021-11-05 16:41:01', '2021-11-05 16:41:01')):
+  
+app/controllers/users_controller.rb:6:in `signup'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:42:17 +0800
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:42:40 +0800
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 34ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:42:41 +0800
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:43:23 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.6ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:43:35 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"始终", "student_no"=>"2021111", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 54ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/js/jquery-1.10.2.min.map" for 127.0.0.1 at 2021-11-05 16:43:36 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/js/jquery-1.10.2.min.map"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:44:30 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:44:35 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"始终", "student_no"=>"2021111", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:7:in `digest'
+app/controllers/users_controller.rb:7:in `hexdigest'
+app/controllers/users_controller.rb:7:in `create'
+Started GET "/js/jquery-1.10.2.min.map" for 127.0.0.1 at 2021-11-05 16:45:03 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/js/jquery-1.10.2.min.map"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:45:47 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:45:55 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"始终", "student_no"=>"2021111", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:7:in `digest'
+app/controllers/users_controller.rb:7:in `hexdigest'
+app/controllers/users_controller.rb:7:in `create'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:47:07 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:47:11 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"始终", "student_no"=>"2021111", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/app/views/index/index/index" for 127.0.0.1 at 2021-11-05 16:47:12 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/app/views/index/index/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/app/views/index/index/index" for 127.0.0.1 at 2021-11-05 16:48:38 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/app/views/index/index/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:48:49 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:49:26 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:49:30 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"123", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/app/views/index/index/index" for 127.0.0.1 at 2021-11-05 16:49:30 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/app/views/index/index/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:49:51 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:49:53 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"123", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2021-11-05 16:49:53 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/index" for 127.0.0.1 at 2021-11-05 16:50:01 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:50:03 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.9ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:50:04 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"123", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index/index" for 127.0.0.1 at 2021-11-05 16:50:04 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.7ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (2.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (75.4ms)
+Completed 200 OK in 117ms (Views: 73.4ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:50:05 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.6ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 26ms (Views: 0.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:50:07 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:52:09 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.8ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:52:13 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"123", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/users_controller.rb:7:in `digest'
+app/controllers/users_controller.rb:7:in `hexdigest'
+app/controllers/users_controller.rb:7:in `create'
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:53:27 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.0ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:53:30 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"123", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '123' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (19.2ms)[0m  [1m[32mINSERT INTO `users` (`student_no`, `password`, `name`, `create_time`, `update_time`) VALUES ('123', '7c4a8d09ca3762af61e59520943dc26494f8941b', '123', '2021-11-05 16:53:30', '2021-11-05 16:53:30')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 56ms (Views: 0.3ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/index/index" for 127.0.0.1 at 2021-11-05 16:53:31 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (2.4ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.9ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (59.0ms)
+Completed 200 OK in 97ms (Views: 54.0ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:53:31 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.6ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 26ms (Views: 0.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:54:55 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:55:30 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"施哲宇", "student_no"=>"202128015329003", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 42ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:55:49 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"施哲宇", "student_no"=>"202128015329003", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-05 16:55:51 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:56:00 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"施哲宇", "student_no"=>"202128015329003", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2021-11-05 16:56:15 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"施哲宇", "student_no"=>"202128015329003", "password"=>"[FILTERED]", "password_confir"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`student_no`, `password`, `name`, `create_time`, `update_time`) VALUES ('202128015329003', '7b75b591f8f2f53507e9c9c2d815c1ce18d62bae', '施哲宇', '2021-11-05 16:56:15', '2021-11-05 16:56:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/index/index" for 127.0.0.1 at 2021-11-05 16:56:15 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.3ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (3.2ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (2.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (60.2ms)
+Completed 200 OK in 88ms (Views: 54.7ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-05 16:56:15 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
