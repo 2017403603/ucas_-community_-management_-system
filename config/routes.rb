@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/signup'
+
   root 'index/index#index'
   get '/admin', to: 'admin/my#index'
   namespace :admin do
