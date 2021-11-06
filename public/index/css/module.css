@@ -39,18 +39,17 @@ span.prior2{color:#fff;background-color:#f5413f;border-radius:2px;margin-left:10
 .no-list-style{list-style-type:none;}
 /*主页页面*/
 #header {
-    height: 40px;
+    /* height: 40px;
     background-color: #2c462b;
-    min-width:900px;
+    width:1000px;
     margin-left: 142px;
-    margin-right: 142px;
-
-}
-#header .wrap {
-    width: 1000px;
+    margin-right: 142px; */
     height: 40px;
-    margin: 0 auto;
+    width:1000px;
+    background-color: #2c462b;
+    margin-left: 100px;
 }
+
 #header ul {
     list-style: none;
 }
@@ -144,14 +143,16 @@ input.search_all{
 }
 #lunbo {
     height: 500px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     overflow:hidden;
     position:relative;
 }
 #lunbo .wrap {
     height: 350px;
     width: 1000px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 #news {
     height: 410px;
@@ -160,15 +161,14 @@ input.search_all{
 .wrap_one{
     width: 350px;
     height: 55px;
-    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 15px;
     padding-bottom:5px;
 }
 #news .wrap_one{
     width: 350px;
     height: 55px;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
     padding-top: 10px;
     padding-bottom:10px;}
 .wrap_one div{
@@ -210,22 +210,22 @@ input.search_all{
     list-style: none;
     font-weight:bold;
 }
+
 #latest {
     height: 400px;
-    min-width:800px;
-    margin-left: 142px;
-    margin-right: 142px;
-    margin-top: auto;
-    margin-bottom: auto;
+    width:985px;
     background-color: #d7ff57;
     position:relative;
+    margin-left:auto;
+    margin-right:auto;
     top: 20px;
     padding: 15px;
+
 }
 #latest .wrap_two {
     width: 1000px;
     height: 280px;
-    margin:0 auto;
+    
 }
 #latest .wrap_two >li:hover >a,#latest .wrap_two >a:hover{
     cursor: pointer;
@@ -293,11 +293,14 @@ ul.qa_ul  #ul_title a{color:white;background-color:#fa8726;padding:2px 5px;float
 .clear{
     clear:both;
 }
+
+
+
 /*页面底栏*/
 #footer {
     height: 150px;
-    margin-left: 142px;
-    margin-right: 142px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .link {
     width:1000px;
