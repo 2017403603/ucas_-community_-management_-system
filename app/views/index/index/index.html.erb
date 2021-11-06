@@ -22,13 +22,26 @@
 <% unless @sliders.blank?%>
   <div class="banner" id="lunbo">
     <ul>
-      <% @sliders.each do |e| %>
         <li>
-          <a href="<%= e.href %>">
-            <img src="/uploads/societies/<%= e.random_name %>">
+          <a href="https://welcome.ucas.edu.cn/index.php/zh-cn/">
+            <img src="/index/images/lunbo1.jpg">
           </a>
         </li>
-      <% end %>
+        <li>
+          <a href="https://foreign.ucas.ac.cn/index.php/zh-cn/">
+            <img src="/index/images/lunbo2.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.ucas.ac.cn/">
+            <img src="/index/images/lunbo3.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="https://onestop.ucas.ac.cn/home/index">
+            <img src="/index/images/lunbo4.jpg">
+          </a>
+        </li>
     </ul>
     <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="/index/images/arrowl.png" alt="prev" width="20" height="35"></a>
     <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="/index/images/arrowr.png" alt="next" width="20" height="37"></a>
@@ -41,7 +54,12 @@
       &nbsp;<span>最近更新/LATEST</span>
     </div>
   </div>
+  <br>
+  <br>
+  <br>
+
   <div class="wrap_two">
+  <p>            </p>
     <div class=".article">
       <ul>
         <% @articles.each do |e| %>
