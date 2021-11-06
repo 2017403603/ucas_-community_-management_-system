@@ -14,7 +14,7 @@
   <link href="/index/css/main.css" type="text/css" rel="stylesheet" />
   <link href="/index/css/module.css" type="text/css" rel="stylesheet" />
   <link href="/css/select2.min.css" rel="stylesheet">
-  <title>首页-大学生社团信息管理系统</title>
+  <title>首页-果壳社团信息管理系统</title>
   <style>
     li {
       list-style: none;
@@ -61,6 +61,10 @@
       background: #fff;
       opacity: 1;
     }
+    .btn-link
+    {
+      color:black;
+    }
     #lunbo .arrow { position: absolute; top: 160px;display: none}
     #lunbo #al { left: 280px;}
     #lunbo #ar { right: 280px;}
@@ -69,26 +73,53 @@
   <%= yield :css %>
 </head>
 <body>
-<div id="header">
+<!--div id="header">
   <div class="wrap">
     <span class="head_title">欢迎来到<%= session["index_society"]["name"] %>!</span>
   </div>
-</div>
+</！div -->
 <div id="nav_box">
   <div class="wrap">
     <span class="logo">
       <img src="/uploads/societies/<%= session["index_society"]["logo"] %>" style="width:80px;height: 80px;">
       <img src="/index/images/logo.png" style="width:240px;height: 80px;">
     </span>
-    <span class="container">
-      <ul id="nav">
+    <span class="container navbar-right">
+      <ul id="nav" style="float:right"  >
         <li><a href="/index/index" class="menu-index">首页</a></li>
         <li><a href="/index/article" class="menu-article">公告通知</a></li>
         <li><a href="/index/activity" class="menu-activity">活动报名</a></li>
         <li><a href="/index/attachment" class="menu-attachment">下载中心</a></li>
         <li><a href="/index/society" class="menu-society">社团简介</a></li>
+        
+        
+        <% if !session[:user] %>
+            <li>
+                  <a href="/users/signup" style="color:#000000;font-weight:250;">
+                      <span class="glyphicon glyphicon-log-out" style="color:#000000"></span> 注册
+                  </a>
+              </li>
+              <li>
+                  <a href="/admin " style="color:#000000;font-weight:250">
+                      <span class="glyphicon glyphicon-envelop"></span> 登录
+                  </a>
+              </li>
+        <% end %>
+
+        <% if session[:user] %>
+            <li>
+                  <a href="/admin" style="color:#000000;font-weight:250;">
+                      <span class="glyphicon glyphicon-log-out" style="color:#000000"></span> 个人空间
+                  </a>
+              </！li>
+              <li>
+                  <a href="/admin/sessions/destroy " style="color:#000000;font-weight:250">
+                      <span class="glyphicon glyphicon-envelop"></span> 退出
+                  </a>
+              </li >
+          <% end %>
       </ul>
-      <select id="select2_society"></select>
+      <%# <select id="select2_society"></select> %>
     </span>
   </div>
 </div>

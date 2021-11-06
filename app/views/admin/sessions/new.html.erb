@@ -7,7 +7,7 @@
   <meta name="author" content="ThemeBucket">
   <link rel="shortcut icon" href="#" type="image/png">
   <%= csrf_meta_tags %>
-  <title>华农-社团信息管理系统-登录</title>
+  <title>果壳-社团信息管理系统-登录</title>
 
   <link href="/css/style.css" rel="stylesheet">
   <link href="/css/style-responsive.css" rel="stylesheet">
@@ -74,8 +74,8 @@
 <script src="/js/modernizr.min.js"></script>
 <script src="/js/my.js"></script>
 <script type="text/javascript" charset="utf-8">
-  function jumpUserIndex() {
-      window.location.href = '/admin/my'
+  function jumpIndex() {
+      window.location.href = '/index/index'
   }
     $('#submit_data').click(function () {
         var _this = $(this);
@@ -83,7 +83,7 @@
         var data = {};
         data['student_no'] = $('input[name=student_no]').val();
         data['password'] = $('input[name=password]').val();
-        doRequest(_this,url,'POST',data,jumpUserIndex);
+        doRequest(_this,url,'POST',data,jumpIndex);
     });
 </script>
 
