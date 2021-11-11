@@ -1,0 +1,30 @@
+<%= content_for :css do %>
+  <style>
+    #content {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    #content .content-list {
+      position: relative;
+    }
+    .list_time {
+      position: absolute;
+      right: 5px;
+    }
+  </style>
+<% end %>
+<input type="text" class="show_content" hidden value="<%= @introduce.content unless @introduce.blank? %>">
+<div id="content">
+  <hr>
+  <div class="content-list">
+
+  </div>
+</div>
+<%= content_for :js do %>
+  <script type="text/javascript" charset="utf-8">
+      window.onload = function () {
+          var content = $('.show_content').val();
+          $('.content-list').html(content);
+      }
+  </script>
+<% end %>

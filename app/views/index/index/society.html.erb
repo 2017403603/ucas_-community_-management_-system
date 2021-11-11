@@ -7,17 +7,49 @@
     #content .content-list {
       position: relative;
     }
+    .numOfPeople {
+      position: absolute;
+      right: 200px;
+    }
     .list_time {
+      position: absolute;
+      right: 100px;
+    }
+    .button {
       position: absolute;
       right: 5px;
     }
   </style>
 <% end %>
-<input type="text" class="show_content" hidden value="<%= @introduce.content unless @introduce.blank? %>">
 <div id="content">
   <hr>
   <div class="content-list">
+    <ul>
+      <% @societies.each do |e| %>
+        <li>【社团】
+          <a href="/index/society/<%= e.id %>" class="list_title">
+            <%= e.name%>
+          </a>
+          
+          <span class="numOfPeople"> 
+            人数：<%=e.num_of_people%>
+          </span>
 
+          <span class="list_time"> <%= e.create_time.to_s[0..10] %></span>
+
+          <span class="button"> 
+            <button type="button">
+
+              加入社团
+              
+            </button> 
+          </span>
+        </li>
+      <% end %>
+    </ul>
+    <div class="digg_pagination">
+      <%= will_paginate @societies, :container => false %>
+    </div>
   </div>
 </div>
 <%= content_for :js do %>

@@ -54,6 +54,7 @@ Rails.application.routes.draw do
     get '/society', to: 'index#society'
     get '/change/:id', to: 'index#change'
     get '/article/:id', to: 'index#article_detail'
+    get '/society/:id', to: 'index#society_detail'
     get '/activity/:id', to: 'index#activity_detail'
     get '/get_societies', to: 'index#get_societies'
   end
