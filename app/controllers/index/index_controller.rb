@@ -6,6 +6,7 @@ module Index
       @articles = Article.by_status.by_society_id(session["index_society"]["id"]).by_create_time.limit(6)
       @activities = Activity.by_status.by_society_id(session["index_society"]["id"]).by_create_time.limit(6)
       @attachments = Attachment.by_status.by_society_id(session["index_society"]["id"]).by_create_time.limit(6)
+      @societies = StuSociety.by_status
     end
 
     def article
@@ -37,12 +38,19 @@ module Index
     def attachment
       @attachments = Attachment
                         .by_status
-                        .by_society_id(session["index_society"]["id"])
                         .by_create_time
                         .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
     end
 
     def society
+      @societies = StuSociety
+                      .by_status
+                      .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
+      @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
+    end
+
+    def society_detail
+      
       @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
     end
 

@@ -13,22 +13,11 @@
     }
   </style>
 <% end %>
+<input type="text" class="show_content" hidden value="<%= @introduce.content unless @introduce.blank? %>">
 <div id="content">
   <hr>
   <div class="content-list">
-    <ul>
-      <% @societies.each do |e| %>
-        <li>【公告】
-          <a href="/index/society/<%= e.id %>" class="list_title">
-            <%= e.name%>
-          </a>
-          <span class="list_time"><%= e.create_time.to_s[0..10] %></span>
-        </li>
-      <% end %>
-    </ul>
-    <div class="digg_pagination">
-      <%= will_paginate @societies, :container => false %>
-    </div>
+
   </div>
 </div>
 <%= content_for :js do %>
