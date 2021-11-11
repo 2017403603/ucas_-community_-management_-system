@@ -86,6 +86,8 @@ module Index
           @menu_name = "menu-attachment"
         when "society"
           @menu_name = "menu-society"
+        when "society_detail"
+          @menu_name = "menu-society"
         else
           @menu_name = "menu-index"
       end
