@@ -13,19 +13,54 @@
     }
   </style>
 <% end %>
+
+
 <div id="content">
-  <hr>
+  
   <div class="content-list">
-    <ul>
-      <% @activities.each do |e| %>
-        <li>【活动】
-          <a href="/index/activity/<%= e.id %>" class="list_title">
-            <%= e.name%>
-          </a>
-          <span class="list_time"><%= e.create_time.to_s[0..10] %></span>
-        </li>
-      <% end %>
-    </ul>
+  
+    <table class="table">
+      <tr>
+        <th>活动名称</th>
+        <th>主力社团</th>
+        <th>活动时间</th>
+        <th>发布时间</th>
+        <th>是否申请</th>
+      </tr>
+ 
+      <div id="content">
+        
+        <div class="content-list">
+          <ul>
+            <% @activities.each do |e| %>
+            <tr>
+              
+              <td>
+                <a href="/index/activity/<%= e.id %>" class="list_title">
+                  <%= e.name%> 
+                </a>
+              </td>
+          
+              <td><%= (society2=get_data_by_pid('id',e.society_id,StuSociety)).blank? ? '' : society2.first.name %></td> 
+              <td><%= e.apply_start_time.to_s[0..15] %></td>
+              <td><%= e.create_time.to_s[0..10] %></td>
+              <td><%= submit_tag '申请加入活动' %></td>
+              
+            </tr>
+            <% end %>
+
+    
+          </ul>
+        </div>
+    </div>
+
+    </table>
+    
+    
+    
+    
+    
+    
     <div class="digg_pagination">
       <%= will_paginate @activities, :container => false %>
     </div>
