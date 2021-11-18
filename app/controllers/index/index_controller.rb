@@ -54,6 +54,47 @@ module Index
       @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
     end
 
+    def join_society
+      student_no = session["user"]["student_no"]
+      if !student_no
+        render json: {code: 201, errors: '请先登陆'}
+      else
+        society_id = session["index_society"]["id"]
+        data = set_data
+        res = Level.create(data)
+        if res.new_record?
+          render json: {code: 201, message: res.errors.messages}
+        else
+          render json: {code: 200, message: '新增成功'}
+        end
+      end
+
+
+      
+    end
+
+    def set_data
+      data = {
+          society_id: session["index_society"]["id"],
+          student_no: session["user"]["student_no"],
+          name: session["user"]["name"],
+          start_time: Time.now.inspect,
+          end_time: Time.now.inspect,
+          sex: session[:user][:sex],
+          phone: session[:user][:phone],
+          academy_id: 0,
+          major_id: 0,
+          mail: session[:user][:mail],
+          location: " ",
+          native_place: " ",
+          emer_name: " ",
+          emer_phone: " ",
+          status: 3,
+          create_time: Time.now.inspect,
+          update_time: Time.now.inspect
+      }
+    end
+
     def change
       society_id = params[:id]
       session[:index_society] = StuSociety.by_status.find(society_id)
