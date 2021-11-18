@@ -20938,3 +20938,1510 @@ Processing by Index::IndexController#get_societies as JSON
 Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:15:03 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (1.1ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.5ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (33.3ms)
+Completed 200 OK in 263ms (Views: 34.5ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:15:03 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:15:10 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.2ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (5.1ms)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:15:10 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:15:22 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.8ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.2ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.8ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (37.6ms)
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:15:22 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:17:10 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (8.1ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.5ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (16.5ms)
+Completed 200 OK in 22ms (Views: 9.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:17:10 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:17:16 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.4ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (5.5ms)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:17:16 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:18:55 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (2.0ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (10.0ms)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:18:55 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.6ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:19:04 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.3ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.0ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (8.4ms)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:19:04 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:19:09 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.9ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (3.3ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.7ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (19.7ms)
+Completed 200 OK in 25ms (Views: 16.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:19:10 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.6ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 00:19:10 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.6ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (7.9ms)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 00:19:10 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 11:38:08 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (6.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.7ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (54.4ms)
+Completed 200 OK in 602ms (Views: 77.5ms | ActiveRecord: 97.8ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 11:38:08 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/volunteer/images/favicon.ico" for 127.0.0.1 at 2021-11-07 11:38:08 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/volunteer/images/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mStuSociety Load (8.3ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 43ms (Views: 0.5ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 11:38:58 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.6ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (8.4ms)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/volunteer/images/favicon.ico" for 127.0.0.1 at 2021-11-07 11:38:58 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/volunteer/images/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 11:38:58 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (7.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 11:39:13 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.2ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (10.3ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 11:39:13 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.3ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-07 20:02:35 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (4.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.0ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (69.1ms)
+Completed 200 OK in 457ms (Views: 90.4ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-07 20:02:36 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-11 20:10:47 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (9.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (1.6ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.5ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (2.2ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (127.3ms)
+Completed 200 OK in 1044ms (Views: 139.9ms | ActiveRecord: 165.2ms)
+
+
+Started GET "/volunteer/images/favicon.ico" for 127.0.0.1 at 2021-11-11 20:10:49 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/volunteer/images/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:10:49 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (13.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (33.0ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 155ms (Views: 101.3ms | ActiveRecord: 46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-11 20:15:39 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.8ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.3ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.5ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (94.5ms)
+Completed 200 OK in 520ms (Views: 91.5ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:15:40 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (1.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 29ms (Views: 0.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/index/activity" for 127.0.0.1 at 2021-11-11 20:15:42 +0800
+Processing by Index::IndexController#activity as HTML
+  Rendering index/index/activity.html.erb within index/layouts/application
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 10 OFFSET 0[0m
+  Rendered index/index/activity.html.erb within index/layouts/application (4.7ms)
+Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:15:42 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/index/attachment" for 127.0.0.1 at 2021-11-11 20:15:44 +0800
+Processing by Index::IndexController#attachment as HTML
+  Rendering index/index/attachment.html.erb within index/layouts/application
+  [1m[36mAttachment Load (1.0ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `attachments` WHERE `attachments`.`status` = 1[0m
+  Rendered index/index/attachment.html.erb within index/layouts/application (46.1ms)
+Completed 200 OK in 56ms (Views: 50.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:15:44 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/index/society" for 127.0.0.1 at 2021-11-11 20:15:45 +0800
+Processing by Index::IndexController#society as HTML
+  [1m[36mIntroduce Load (1.0ms)[0m  [1m[34mSELECT  `introduces`.* FROM `introduces` WHERE (society_id = 1 and status = 1) ORDER BY `introduces`.`id` ASC LIMIT 1[0m
+  Rendering index/index/society.html.erb within index/layouts/application
+  [1m[36mStuSociety Load (1.4ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 LIMIT 10 OFFSET 0[0m
+  Rendered index/index/society.html.erb within index/layouts/application (8.3ms)
+Completed 200 OK in 57ms (Views: 23.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:15:45 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/index/attachment" for 127.0.0.1 at 2021-11-11 20:16:10 +0800
+Processing by Index::IndexController#attachment as HTML
+  Rendering index/index/attachment.html.erb within index/layouts/application
+  [1m[36mAttachment Load (1.0ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `attachments` WHERE `attachments`.`status` = 1[0m
+  Rendered index/index/attachment.html.erb within index/layouts/application (15.2ms)
+Completed 200 OK in 27ms (Views: 20.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:16:10 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/index/society" for 127.0.0.1 at 2021-11-11 20:16:11 +0800
+Processing by Index::IndexController#society as HTML
+  [1m[36mIntroduce Load (0.8ms)[0m  [1m[34mSELECT  `introduces`.* FROM `introduces` WHERE (society_id = 1 and status = 1) ORDER BY `introduces`.`id` ASC LIMIT 1[0m
+  Rendering index/index/society.html.erb within index/layouts/application
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 LIMIT 10 OFFSET 0[0m
+  Rendered index/index/society.html.erb within index/layouts/application (8.7ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:16:11 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.1ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-11 20:16:21 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (2.0ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-11 20:16:33 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.5ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-11 20:16:49 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-11 20:16:49 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (1.9ms)
+Completed 200 OK in 38ms (Views: 5.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/index/index" for 127.0.0.1 at 2021-11-11 20:16:54 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (2.3ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (2.1ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.8ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (22.3ms)
+Completed 200 OK in 37ms (Views: 22.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:16:54 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.3ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 10ms (Views: 3.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/index/article" for 127.0.0.1 at 2021-11-11 20:17:01 +0800
+Processing by Index::IndexController#article as HTML
+  Rendering index/index/article.html.erb within index/layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 10 OFFSET 0[0m
+  Rendered index/index/article.html.erb within index/layouts/application (6.9ms)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:17:01 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/index/article/4" for 127.0.0.1 at 2021-11-11 20:17:04 +0800
+Processing by Index::IndexController#article_detail as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) AND `articles`.`id` = 4 LIMIT 1[0m
+  Rendering index/index/article_detail.html.erb within index/layouts/application
+  Rendered index/index/article_detail.html.erb within index/layouts/application (3.5ms)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:17:04 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/index/index" for 127.0.0.1 at 2021-11-11 20:17:07 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.9ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.9ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (16.2ms)
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:17:07 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-11 20:18:12 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-11 20:18:12 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (1.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (1.4ms)
+Completed 200 OK in 11ms (Views: 3.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-11 20:29:12 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[36mStuSociety Load (1.2ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.0ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.7ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (19.3ms)
+Completed 200 OK in 60ms (Views: 45.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:29:12 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-11 20:29:15 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-11 20:29:15 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (1.2ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-11 20:29:20 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"2017403603", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '2017403603' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 5 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 85ms (Views: 0.3ms | ActiveRecord: 7.3ms)
+
+
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1[0m
+Started GET "/index/index" for 127.0.0.1 at 2021-11-11 20:29:20 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.0ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.3ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (3.0ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (22.2ms)
+Completed 200 OK in 35ms (Views: 23.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-11 20:29:20 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (2.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 11ms (Views: 1.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-11 20:29:22 +0800
+Processing by Admin::MyController#index as HTML
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (1.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.8ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (25.9ms)
+  [1m[36mStuSociety Load (1.2ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 73ms (Views: 29.7ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/admin/staffs?menu_id=11" for 127.0.0.1 at 2021-11-11 20:30:09 +0800
+Processing by Admin::StaffsController#index as HTML
+  Parameters: {"menu_id"=>"11"}
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 11 LIMIT 1[0m
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/staffs/index.html.erb within admin/layouts/application
+  [1m[36mStaff Load (0.9ms)[0m  [1m[34mSELECT  `staffs`.* FROM `staffs` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m
+  [1m[36mJob Load (1.4ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m
+  [1m[36mDepartment Load (0.9ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m  [["id", 4]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m  [["id", 37]]
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 2[0m
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 48[0m
+  [1m[36mCACHE Department Load (0.1ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m  [["id", 3]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m  [["id", 35]]
+  Rendered admin/staffs/index.html.erb within admin/layouts/application (66.7ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 118ms (Views: 66.8ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/admin/my/staff?menu_id=9" for 127.0.0.1 at 2021-11-11 20:31:01 +0800
+Processing by Admin::MyController#staff as HTML
+  Parameters: {"menu_id"=>"9"}
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 9 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/staff.html.erb within admin/layouts/application
+  [1m[36mStaff Load (1.2ms)[0m  [1m[34mSELECT  staffs.*, users.mail,users.phone FROM `staffs` inner join users on staffs.user_id = users.id WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mDepartment Load (0.8ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m
+  [1m[36mDepartment Load (1.8ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m
+  [1m[36mJob Load (0.9ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m  [["id", 4]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m  [["id", 37]]
+  [1m[36mDepartment Load (0.8ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 2[0m
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 48[0m
+  [1m[36mCACHE Department Load (0.1ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m  [["id", 3]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m  [["id", 35]]
+  Rendered admin/my/staff.html.erb within admin/layouts/application (49.1ms)
+  [1m[36mStuSociety Load (2.5ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 92ms (Views: 48.0ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/admin/my/level?menu_id=24" for 127.0.0.1 at 2021-11-11 20:31:03 +0800
+Processing by Admin::MyController#level as HTML
+  Parameters: {"menu_id"=>"24"}
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 24 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/level.html.erb within admin/layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT  `levels`.* FROM `levels` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (0.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 4[0m
+  [1m[36mMajor Load (0.6ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 13[0m
+  [1m[36mAcademy Load (0.8ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.7ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/my/level.html.erb within admin/layouts/application (50.9ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 99ms (Views: 52.7ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/admin/my/activity?menu_id=8" for 127.0.0.1 at 2021-11-11 20:31:04 +0800
+Processing by Admin::MyController#activity as HTML
+  Parameters: {"menu_id"=>"8"}
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 8 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/activity.html.erb within admin/layouts/application
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  Rendered admin/my/activity.html.erb within admin/layouts/application (6.0ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 49ms (Views: 13.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/admin/my/article?menu_id=10" for 127.0.0.1 at 2021-11-11 20:31:06 +0800
+Processing by Admin::MyController#article as HTML
+  Parameters: {"menu_id"=>"10"}
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 10 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/article.html.erb within admin/layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE (society_id = 1) ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  Rendered admin/my/article.html.erb within admin/layouts/application (6.0ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 46ms (Views: 13.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/admin/my/staff?menu_id=9" for 127.0.0.1 at 2021-11-11 20:31:07 +0800
+Processing by Admin::MyController#staff as HTML
+  Parameters: {"menu_id"=>"9"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 9 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/staff.html.erb within admin/layouts/application
+  [1m[36mStaff Load (1.2ms)[0m  [1m[34mSELECT  staffs.*, users.mail,users.phone FROM `staffs` inner join users on staffs.user_id = users.id WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mDepartment Load (3.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m
+  [1m[36mJob Load (1.1ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m
+  [1m[36mDepartment Load (0.8ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m  [["id", 4]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m  [["id", 37]]
+  [1m[36mDepartment Load (1.2ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 2[0m
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 48[0m
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m  [["id", 3]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m  [["id", 35]]
+  Rendered admin/my/staff.html.erb within admin/layouts/application (45.1ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 82ms (Views: 44.2ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/admin/my/level?menu_id=24" for 127.0.0.1 at 2021-11-11 20:31:16 +0800
+Processing by Admin::MyController#level as HTML
+  Parameters: {"menu_id"=>"24"}
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 24 LIMIT 1[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/level.html.erb within admin/layouts/application
+  [1m[36mLevel Load (0.9ms)[0m  [1m[34mSELECT  `levels`.* FROM `levels` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (0.6ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 4[0m
+  [1m[36mMajor Load (0.9ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 13[0m
+  [1m[36mAcademy Load (0.8ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (1.6ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/my/level.html.erb within admin/layouts/application (22.5ms)
+  [1m[36mStuSociety Load (1.1ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 79ms (Views: 32.2ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/admin/my/activity?menu_id=8" for 127.0.0.1 at 2021-11-11 20:31:17 +0800
+Processing by Admin::MyController#activity as HTML
+  Parameters: {"menu_id"=>"8"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 8 LIMIT 1[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/activity.html.erb within admin/layouts/application
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  Rendered admin/my/activity.html.erb within admin/layouts/application (8.5ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 17.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/admin/votes?menu_id=7" for 127.0.0.1 at 2021-11-11 20:31:19 +0800
+Processing by Admin::VotesController#index as HTML
+  Parameters: {"menu_id"=>"7"}
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 7 LIMIT 1[0m
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/votes/index.html.erb within admin/layouts/application
+  [1m[36mVote Load (2.8ms)[0m  [1m[34mSELECT  `votes`.* FROM `votes` WHERE (society_id = 1) ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  Rendered admin/votes/index.html.erb within admin/layouts/application (10.2ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 76ms (Views: 14.7ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/admin/my/level?menu_id=24" for 127.0.0.1 at 2021-11-11 20:31:20 +0800
+Processing by Admin::MyController#level as HTML
+  Parameters: {"menu_id"=>"24"}
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 24 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/level.html.erb within admin/layouts/application
+  [1m[36mLevel Load (1.9ms)[0m  [1m[34mSELECT  `levels`.* FROM `levels` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (0.9ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 4[0m
+  [1m[36mMajor Load (1.3ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 13[0m
+  [1m[36mAcademy Load (1.2ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.7ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/my/level.html.erb within admin/layouts/application (23.7ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 26.4ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/admin/my/article?menu_id=10" for 127.0.0.1 at 2021-11-11 20:31:25 +0800
+Processing by Admin::MyController#article as HTML
+  Parameters: {"menu_id"=>"10"}
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 10 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/article.html.erb within admin/layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE (society_id = 1) ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  Rendered admin/my/article.html.erb within admin/layouts/application (4.6ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 10.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/admin/my/level?menu_id=24" for 127.0.0.1 at 2021-11-11 20:31:26 +0800
+Processing by Admin::MyController#level as HTML
+  Parameters: {"menu_id"=>"24"}
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 24 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/level.html.erb within admin/layouts/application
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT  `levels`.* FROM `levels` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (0.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 4[0m
+  [1m[36mMajor Load (1.1ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 13[0m
+  [1m[36mAcademy Load (0.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.6ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/my/level.html.erb within admin/layouts/application (20.1ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 49ms (Views: 24.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/admin/my/staff?menu_id=9" for 127.0.0.1 at 2021-11-11 20:31:27 +0800
+Processing by Admin::MyController#staff as HTML
+  Parameters: {"menu_id"=>"9"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 9 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/staff.html.erb within admin/layouts/application
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  staffs.*, users.mail,users.phone FROM `staffs` inner join users on staffs.user_id = users.id WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m
+  [1m[36mJob Load (2.2ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m  [["id", 4]]
+  [1m[36mCACHE Job Load (0.1ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m  [["id", 37]]
+  [1m[36mDepartment Load (1.6ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 2[0m
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 48[0m
+  [1m[36mCACHE Department Load (0.1ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m  [["id", 3]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m  [["id", 35]]
+  Rendered admin/my/staff.html.erb within admin/layouts/application (32.8ms)
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 63ms (Views: 32.4ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/admin/my/activity?menu_id=8" for 127.0.0.1 at 2021-11-11 20:33:15 +0800
+Processing by Admin::MyController#activity as HTML
+  Parameters: {"menu_id"=>"8"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 8 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/activity.html.erb within admin/layouts/application
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  Rendered admin/my/activity.html.erb within admin/layouts/application (6.4ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 40ms (Views: 13.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/admin/my/activity?menu_id=8" for 127.0.0.1 at 2021-11-11 20:33:18 +0800
+Processing by Admin::MyController#activity as HTML
+  Parameters: {"menu_id"=>"8"}
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 8 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/activity.html.erb within admin/layouts/application
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  Rendered admin/my/activity.html.erb within admin/layouts/application (8.9ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 15.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/admin/activities?menu_id=14" for 127.0.0.1 at 2021-11-11 20:33:21 +0800
+Processing by Admin::ActivitiesController#index as HTML
+  Parameters: {"menu_id"=>"14"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 14 LIMIT 1[0m
+  [1m[36mMenuList Load (1.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/activities/index.html.erb within admin/layouts/application
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  Rendered admin/activities/index.html.erb within admin/layouts/application (6.7ms)
+  [1m[36mStuSociety Load (2.1ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 16.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/admin/activities/1" for 127.0.0.1 at 2021-11-11 20:33:23 +0800
+Processing by Admin::ActivitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 14 LIMIT 1[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) AND `activities`.`id` = 1 LIMIT 1[0m
+  Rendering admin/activities/show.html.erb within admin/layouts/application
+  Rendered admin/activities/show.html.erb within admin/layouts/application (2.5ms)
+  [1m[36mStuSociety Load (2.6ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 46ms (Views: 11.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/admin/activities/2/edit" for 127.0.0.1 at 2021-11-11 20:33:34 +0800
+Processing by Admin::ActivitiesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 14 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) AND `activities`.`id` = 2 LIMIT 1[0m
+  Rendering admin/activities/edit.html.erb within admin/layouts/application
+  Rendered admin/activities/edit.html.erb within admin/layouts/application (3.5ms)
+  [1m[36mStuSociety Load (1.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 46ms (Views: 12.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/uploads/194635c2135e05e618cd3b856327dfff.png" for 127.0.0.1 at 2021-11-11 20:33:35 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/194635c2135e05e618cd3b856327dfff.png"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/attachments?menu_id=16" for 127.0.0.1 at 2021-11-11 20:34:07 +0800
+Processing by Admin::AttachmentsController#index as HTML
+  Parameters: {"menu_id"=>"16"}
+  [1m[36mMenuList Load (2.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 16 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/attachments/index.html.erb within admin/layouts/application
+  [1m[36mAttachment Load (1.1ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `attachments` WHERE (society_id = 1)[0m
+  Rendered admin/attachments/index.html.erb within admin/layouts/application (18.5ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 26.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/admin/activities?menu_id=14" for 127.0.0.1 at 2021-11-11 20:34:08 +0800
+Processing by Admin::ActivitiesController#index as HTML
+  Parameters: {"menu_id"=>"14"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 14 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/activities/index.html.erb within admin/layouts/application
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  Rendered admin/activities/index.html.erb within admin/layouts/application (4.5ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 11.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/admin/introduces?menu_id=25" for 127.0.0.1 at 2021-11-11 20:34:09 +0800
+Processing by Admin::IntroducesController#index as HTML
+  Parameters: {"menu_id"=>"25"}
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 25 LIMIT 1[0m
+  [1m[36mMenuList Load (2.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  [1m[36mIntroduce Load (0.9ms)[0m  [1m[34mSELECT  `introduces`.* FROM `introduces` WHERE (society_id = 1 and status = 1) ORDER BY `introduces`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admin/introduces/2/edit
+Completed 302 Found in 35ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/admin/introduces/2/edit" for 127.0.0.1 at 2021-11-11 20:34:09 +0800
+Processing by Admin::IntroducesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 25 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  [1m[36mIntroduce Load (0.9ms)[0m  [1m[34mSELECT  `introduces`.* FROM `introduces` WHERE (society_id = 1 and status = 1) ORDER BY `introduces`.`id` ASC LIMIT 1[0m
+  Rendering admin/introduces/edit.html.erb within admin/layouts/application
+  Rendered admin/introduces/edit.html.erb within admin/layouts/application (1.6ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 12.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/admin/sliders?menu_id=17" for 127.0.0.1 at 2021-11-11 20:34:11 +0800
+Processing by Admin::SlidersController#index as HTML
+  Parameters: {"menu_id"=>"17"}
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 17 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/sliders/index.html.erb within admin/layouts/application
+  [1m[36mSlider Load (2.6ms)[0m  [1m[34mSELECT  `sliders`.* FROM `sliders` WHERE (society_id = 1) ORDER BY `sliders`.`sort` ASC LIMIT 10 OFFSET 0[0m
+  Rendered admin/sliders/index.html.erb within admin/layouts/application (10.1ms)
+  [1m[36mStuSociety Load (1.1ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 45ms (Views: 22.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/admin/attachments?menu_id=16" for 127.0.0.1 at 2021-11-11 20:34:12 +0800
+Processing by Admin::AttachmentsController#index as HTML
+  Parameters: {"menu_id"=>"16"}
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 16 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/attachments/index.html.erb within admin/layouts/application
+  [1m[36mAttachment Load (0.8ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `attachments` WHERE (society_id = 1)[0m
+  Rendered admin/attachments/index.html.erb within admin/layouts/application (10.4ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 44ms (Views: 17.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admin/sliders?menu_id=17" for 127.0.0.1 at 2021-11-11 20:34:13 +0800
+Processing by Admin::SlidersController#index as HTML
+  Parameters: {"menu_id"=>"17"}
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 17 LIMIT 1[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/sliders/index.html.erb within admin/layouts/application
+  [1m[36mSlider Load (0.9ms)[0m  [1m[34mSELECT  `sliders`.* FROM `sliders` WHERE (society_id = 1) ORDER BY `sliders`.`sort` ASC LIMIT 10 OFFSET 0[0m
+  Rendered admin/sliders/index.html.erb within admin/layouts/application (4.8ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 34ms (Views: 10.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/admin/attachments?menu_id=16" for 127.0.0.1 at 2021-11-11 20:35:55 +0800
+Processing by Admin::AttachmentsController#index as HTML
+  Parameters: {"menu_id"=>"16"}
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 16 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/attachments/index.html.erb within admin/layouts/application
+  [1m[36mAttachment Load (0.7ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `attachments` WHERE (society_id = 1)[0m
+  Rendered admin/attachments/index.html.erb within admin/layouts/application (13.8ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 47ms (Views: 22.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/admin/sliders?menu_id=17" for 127.0.0.1 at 2021-11-11 20:39:11 +0800
+Processing by Admin::SlidersController#index as HTML
+  Parameters: {"menu_id"=>"17"}
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 17 LIMIT 1[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/sliders/index.html.erb within admin/layouts/application
+  [1m[36mSlider Load (0.8ms)[0m  [1m[34mSELECT  `sliders`.* FROM `sliders` WHERE (society_id = 1) ORDER BY `sliders`.`sort` ASC LIMIT 10 OFFSET 0[0m
+  Rendered admin/sliders/index.html.erb within admin/layouts/application (4.6ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 37ms (Views: 10.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/admin/attachments?menu_id=16" for 127.0.0.1 at 2021-11-11 20:40:21 +0800
+Processing by Admin::AttachmentsController#index as HTML
+  Parameters: {"menu_id"=>"16"}
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 16 LIMIT 1[0m
+  [1m[36mMenuList Load (1.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/attachments/index.html.erb within admin/layouts/application
+  [1m[36mAttachment Load (0.9ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `attachments` WHERE (society_id = 1)[0m
+  Rendered admin/attachments/index.html.erb within admin/layouts/application (12.8ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 45ms (Views: 18.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/admin/activities?menu_id=14" for 127.0.0.1 at 2021-11-11 20:40:22 +0800
+Processing by Admin::ActivitiesController#index as HTML
+  Parameters: {"menu_id"=>"14"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 14 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/activities/index.html.erb within admin/layouts/application
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  Rendered admin/activities/index.html.erb within admin/layouts/application (6.3ms)
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 15.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/admin/articles?menu_id=15" for 127.0.0.1 at 2021-11-11 20:40:23 +0800
+Processing by Admin::ArticlesController#index as HTML
+  Parameters: {"menu_id"=>"15"}
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 15 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/articles/index.html.erb within admin/layouts/application
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  Rendered admin/articles/index.html.erb within admin/layouts/application (7.3ms)
+  [1m[36mStuSociety Load (1.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 17.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/admin/departments?menu_id=13" for 127.0.0.1 at 2021-11-11 20:40:24 +0800
+Processing by Admin::DepartmentsController#index as HTML
+  Parameters: {"menu_id"=>"13"}
+  [1m[36mMenuList Load (1.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 13 LIMIT 1[0m
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/departments/index.html.erb within admin/layouts/application
+  [1m[36mDepartment Load (0.9ms)[0m  [1m[34mSELECT  `departments`.* FROM `departments` WHERE (society_id = 1) ORDER BY sort LIMIT 10 OFFSET 0[0m
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`department_id` = 2[0m
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`department_id` = 3[0m
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`department_id` = 4[0m
+  Rendered admin/departments/index.html.erb within admin/layouts/application (16.1ms)
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 66ms (Views: 22.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/admin/levels?menu_id=12" for 127.0.0.1 at 2021-11-11 20:40:26 +0800
+Processing by Admin::LevelsController#index as HTML
+  Parameters: {"menu_id"=>"12"}
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 12 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/levels/index.html.erb within admin/layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT  `levels`.* FROM `levels` WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (1.4ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 4[0m
+  [1m[36mMajor Load (0.5ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 13[0m
+  [1m[36mAcademy Load (0.6ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.5ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.1ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/levels/index.html.erb within admin/layouts/application (23.4ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 59ms (Views: 34.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/admin/sliders?menu_id=17" for 127.0.0.1 at 2021-11-11 20:40:28 +0800
+Processing by Admin::SlidersController#index as HTML
+  Parameters: {"menu_id"=>"17"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 17 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/sliders/index.html.erb within admin/layouts/application
+  [1m[36mSlider Load (1.4ms)[0m  [1m[34mSELECT  `sliders`.* FROM `sliders` WHERE (society_id = 1) ORDER BY `sliders`.`sort` ASC LIMIT 10 OFFSET 0[0m
+  Rendered admin/sliders/index.html.erb within admin/layouts/application (5.8ms)
+  [1m[36mStuSociety Load (1.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 13.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-18 19:14:39 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (8.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.8ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.0ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (66.6ms)
+Completed 200 OK in 753ms (Views: 68.6ms | ActiveRecord: 48.2ms)
+
+
+Started GET "/volunteer/images/favicon.ico" for 127.0.0.1 at 2021-11-18 19:14:41 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/volunteer/images/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-18 19:14:41 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (1.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2021-11-18 19:14:49 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.6ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-18 19:14:52 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-18 19:14:52 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (1.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (2.0ms)
+Completed 200 OK in 86ms (Views: 12.0ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-18 19:15:06 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2021-11-18 19:15:06 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (1.0ms)
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-18 19:15:08 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"13587280647", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '13587280647' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 71ms (Views: 0.4ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2021-11-18 19:15:13 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"2017403603", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '2017403603' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStaff Load (1.4ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 5 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 43ms (Views: 0.6ms | ActiveRecord: 7.1ms)
+
+
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1[0m
+Started GET "/index/index" for 127.0.0.1 at 2021-11-18 19:15:13 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.9ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 AND (society_id = 1) ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.2ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 AND (society_id = 1) ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (21.4ms)
+Completed 200 OK in 39ms (Views: 21.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2021-11-18 19:15:14 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.1ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-18 19:15:15 +0800
+Processing by Admin::MyController#index as HTML
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (0.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.7ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (31.3ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 82ms (Views: 37.7ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/admin/my/password?menu_id=6" for 127.0.0.1 at 2021-11-18 19:15:19 +0800
+Processing by Admin::MyController#password as HTML
+  Parameters: {"menu_id"=>"6"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 6 LIMIT 1[0m
+  [1m[36mMenuList Load (1.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendering admin/my/password.html.erb within admin/layouts/application
+  Rendered admin/my/password.html.erb within admin/layouts/application (1.7ms)
+  [1m[36mStuSociety Load (1.1ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 10.4ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/admin/societies?menu_id=18" for 127.0.0.1 at 2021-11-18 19:15:22 +0800
+Processing by Admin::SocietiesController#index as HTML
+  Parameters: {"menu_id"=>"18"}
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (2.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 18 LIMIT 1[0m
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/societies/index.html.erb within admin/layouts/application
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` ORDER BY sort LIMIT 10 OFFSET 0[0m
+  Rendered admin/societies/index.html.erb within admin/layouts/application (7.5ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 44ms (Views: 18.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/admin/users?menu_id=22" for 127.0.0.1 at 2021-11-18 19:15:24 +0800
+Processing by Admin::UsersController#index as HTML
+  Parameters: {"menu_id"=>"22"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/index.html.erb within admin/layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (1.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (1.2ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  [1m[36mAcademy Load (0.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (1.2ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/users/index.html.erb within admin/layouts/application (44.4ms)
+  [1m[36mStuSociety Load (0.6ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 77ms (Views: 46.2ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/admin/academies?menu_id=19" for 127.0.0.1 at 2021-11-18 19:15:26 +0800
+Processing by Admin::AcademiesController#index as HTML
+  Parameters: {"menu_id"=>"19"}
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 19 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/academies/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (1.6ms)[0m  [1m[34mSELECT  `academies`.* FROM `academies` ORDER BY sort LIMIT 10 OFFSET 0[0m
+  [1m[36mMajor Load (1.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`academy_id` = 1[0m
+  Rendered admin/academies/index.html.erb within admin/layouts/application (13.2ms)
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 49ms (Views: 20.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admin/users?menu_id=22" for 127.0.0.1 at 2021-11-18 19:15:27 +0800
+Processing by Admin::UsersController#index as HTML
+  Parameters: {"menu_id"=>"22"}
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 22 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/users/index.html.erb within admin/layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 10 OFFSET 0[0m
+  [1m[36mAcademy Load (2.1ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (1.2ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  [1m[36mAcademy Load (1.5ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.9ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.0ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Academy Load (0.1ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m  [["id", 0]]
+  [1m[36mCACHE Major Load (0.1ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m  [["id", 0]]
+  Rendered admin/users/index.html.erb within admin/layouts/application (34.8ms)
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 71ms (Views: 36.1ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/admin/societies?menu_id=18" for 127.0.0.1 at 2021-11-18 19:15:37 +0800
+Processing by Admin::SocietiesController#index as HTML
+  Parameters: {"menu_id"=>"18"}
+  [1m[36mMenuList Load (2.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 18 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 4 LIMIT 1[0m
+  Rendering admin/societies/index.html.erb within admin/layouts/application
+  [1m[36mStuSociety Load (2.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` ORDER BY sort LIMIT 10 OFFSET 0[0m
+  Rendered admin/societies/index.html.erb within admin/layouts/application (8.4ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 15.0ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/admin/my/staff?menu_id=9" for 127.0.0.1 at 2021-11-18 19:15:39 +0800
+Processing by Admin::MyController#staff as HTML
+  Parameters: {"menu_id"=>"9"}
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 9 LIMIT 1[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/staff.html.erb within admin/layouts/application
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  staffs.*, users.mail,users.phone FROM `staffs` inner join users on staffs.user_id = users.id WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mDepartment Load (0.8ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m
+  [1m[36mDepartment Load (1.2ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m  [["id", 4]]
+  [1m[36mCACHE Job Load (0.1ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m  [["id", 37]]
+  [1m[36mDepartment Load (1.1ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 2[0m
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 48[0m
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m  [["id", 3]]
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m  [["id", 35]]
+  Rendered admin/my/staff.html.erb within admin/layouts/application (109.3ms)
+  [1m[36mStuSociety Load (1.4ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 160ms (Views: 105.0ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/admin/my/staff?menu_id=9" for 127.0.0.1 at 2021-11-18 19:38:05 +0800
+Processing by Admin::MyController#staff as HTML
+  Parameters: {"menu_id"=>"9"}
+  [1m[35m (5.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mMenuList Load (1.7ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 9 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 2 LIMIT 1[0m
+  Rendering admin/my/staff.html.erb within admin/layouts/application
+  [1m[36mStaff Load (2.7ms)[0m  [1m[34mSELECT  staffs.*, users.mail,users.phone FROM `staffs` inner join users on staffs.user_id = users.id WHERE (society_id = 1) LIMIT 10 OFFSET 0[0m
+  [1m[36mDepartment Load (1.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m
+  [1m[36mJob Load (2.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m
+  [1m[36mDepartment Load (2.4ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m
+  [1m[36mJob Load (1.4ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m
+  [1m[36mDepartment Load (0.8ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 4[0m
+  [1m[36mJob Load (2.0ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 37[0m
+  [1m[36mDepartment Load (1.7ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 2[0m
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 48[0m
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 3[0m
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT `jobs`.* FROM `jobs` WHERE `jobs`.`id` = 35[0m
+  Rendered admin/my/staff.html.erb within admin/layouts/application (180.4ms)
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 1044ms (Views: 255.8ms | ActiveRecord: 156.1ms)
+
+
+Started GET "/admin/my?menu_id=5" for 127.0.0.1 at 2021-11-18 19:38:17 +0800
+Processing by Admin::MyController#index as HTML
+  Parameters: {"menu_id"=>"5"}
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.0ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (0.6ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (0.5ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (20.3ms)
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 118ms (Views: 22.9ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/admin/my/edit?menu_id=23" for 127.0.0.1 at 2021-11-18 19:38:22 +0800
+Processing by Admin::MyController#edit as HTML
+  Parameters: {"menu_id"=>"23"}
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 23 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendering admin/my/edit.html.erb within admin/layouts/application
+  Rendered admin/my/edit.html.erb within admin/layouts/application (3.5ms)
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 11.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/admin/my/get_academy_with_majors" for 127.0.0.1 at 2021-11-18 19:38:23 +0800
+Processing by Admin::MyController#get_academy_with_majors as JSON
+  [1m[36mMenuList Load (1.3ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 23 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mAcademy Load (0.4ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`status` = 1 ORDER BY sort[0m
+  [1m[36mMajor Load (0.7ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`academy_id` = 1[0m
+Completed 200 OK in 54ms (Views: 1.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/admin/my/society_change/1" for 127.0.0.1 at 2021-11-18 19:38:29 +0800
+Processing by Admin::MyController#society_change as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mMenuList Load (0.9ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 23 LIMIT 1[0m
+  [1m[36mMenuList Load (1.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 5 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/admin/my?menu_id=5" for 127.0.0.1 at 2021-11-18 19:38:29 +0800
+Processing by Admin::MyController#index as HTML
+  Parameters: {"menu_id"=>"5"}
+  [1m[36mMenuList Load (2.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (0.9ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 0[0m
+  [1m[36mMajor Load (1.0ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 0[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (10.3ms)
+  [1m[36mStuSociety Load (1.6ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 16.9ms | ActiveRecord: 9.7ms)
+
+
