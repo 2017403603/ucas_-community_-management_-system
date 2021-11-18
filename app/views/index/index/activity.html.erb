@@ -7,10 +7,6 @@
     #content .content-list {
       position: relative;
     }
-    .list_time {
-      position: absolute;
-      right: 5px;
-    }
   </style>
 <% end %>
 
@@ -35,16 +31,16 @@
             <% @activities.each do |e| %>
             <tr>
               
-              <td>
+              <td style="width: 300px;">
                 <a href="/index/activity/<%= e.id %>" class="list_title">
                   <%= e.name%> 
                 </a>
               </td>
           
-              <td><%= (society2=get_data_by_pid('id',e.society_id,StuSociety)).blank? ? '' : society2.first.name %></td> 
-              <td><%= e.apply_start_time.to_s[0..15] %></td>
-              <td><%= e.create_time.to_s[0..10] %></td>
-              <td><%= submit_tag '申请加入活动' %></td>
+              <td style="width: 300px;"><%= (society2=get_data_by_pid('id',e.society_id,StuSociety)).blank? ? '' : society2.first.name %></td> 
+              <td style="width: 300px;"><%= e.apply_start_time.to_s[0..15] %></td>
+              <td style="width: 300px;"><%= e.create_time.to_s[0..10] %></td>
+              <td style="width: 300px;"><%= submit_tag '申请加入活动' %></td>
               
             </tr>
             <% end %>

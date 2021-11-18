@@ -7,14 +7,6 @@
     #content .content-list {
       position: relative;
     }
-    .numOfPeople {
-      position: absolute;
-      right: 200px;
-    }
-    .list_time {
-      position: absolute;
-      right: 5px;
-    }
   </style>
 <% end %>
 
@@ -36,14 +28,14 @@
           <ul>
             <% @societies.each do |e| %>
               <tr>
-                <td>
+                <td style="width: 300px;">
                   <a href="/index/society/<%= e.id %>" class="list_title">
                     <%= e.name%> 
                   </a>
                 </td>
-                <td><%= e.num_of_people %></td> 
-                <td><%= e.create_time.to_s[0..10] %></td>
-                <td><%= submit_tag '申请加入社团' %></td>
+                <td style="width: 300px;"><%= e.num_of_people %></td> 
+                <td style="width: 600px;"><%= e.create_time.to_s[0..10] %></td>
+                <td style="width: 300px;"><%= submit_tag '申请加入社团' %></td>
               <tr>
             <% end %>
           </ul>
