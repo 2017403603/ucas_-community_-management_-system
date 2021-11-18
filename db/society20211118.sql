@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.7.11, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.26, for Linux (x86_64)
 --
 -- Host: localhost    Database: society
 -- ------------------------------------------------------
--- Server version	5.7.11-0ubuntu6
+-- Server version	8.0.26-0ubuntu0.20.04.3
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,15 +21,15 @@
 
 DROP TABLE IF EXISTS `academies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `academies` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(45) NOT NULL COMMENT '名称',
-  `sort` int(11) NOT NULL DEFAULT '1' COMMENT '排序',
-  `status` tinyint(4) NOT NULL COMMENT '1 可用 2 不可用 -1删除',
+  `sort` int NOT NULL DEFAULT '1' COMMENT '排序',
+  `status` tinyint NOT NULL COMMENT '1 可用 2 不可用 -1删除',
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='学院表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='学院表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,19 +48,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `activities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `activities` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `society_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `society_id` int NOT NULL,
   `name` varchar(100) NOT NULL,
   `apply_end_time` datetime NOT NULL,
   `apply_start_time` datetime NOT NULL,
   `content` text NOT NULL,
   `create_by` varchar(45) NOT NULL,
   `create_time` datetime NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,9 +79,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `articles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
   `abstract` varchar(255) NOT NULL DEFAULT '',
   `content` text NOT NULL,
@@ -89,10 +89,10 @@ CREATE TABLE `articles` (
   `create_by` varchar(45) NOT NULL,
   `edit_time` datetime NOT NULL,
   `edit_by` varchar(45) NOT NULL,
-  `society_id` int(11) NOT NULL,
-  `status` tinyint(4) NOT NULL,
+  `society_id` int NOT NULL,
+  `status` tinyint NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,18 +111,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `attachments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `attachments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `filesize` varchar(45) NOT NULL,
   `random_name` varchar(100) NOT NULL,
-  `society_id` int(11) NOT NULL,
+  `society_id` int NOT NULL,
   `create_by` varchar(45) NOT NULL,
   `create_time` datetime NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,16 +141,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `departments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `departments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(45) NOT NULL COMMENT '名称',
-  `sort` int(11) NOT NULL DEFAULT '1' COMMENT '排序',
-  `status` tinyint(4) NOT NULL COMMENT '1 可用 2 不可用 -1删除',
-  `society_id` int(11) NOT NULL COMMENT 'refe society',
+  `sort` int NOT NULL DEFAULT '1' COMMENT '排序',
+  `status` tinyint NOT NULL COMMENT '1 可用 2 不可用 -1删除',
+  `society_id` int NOT NULL COMMENT 'refe society',
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='部门表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COMMENT='部门表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,16 +169,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `introduces`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `introduces` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `society_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `society_id` int NOT NULL,
   `content` text NOT NULL,
   `create_by` varchar(45) NOT NULL,
   `create_time` datetime NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -197,13 +197,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `jobs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `department_id` int(11) NOT NULL,
+  `department_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,28 +222,28 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `levels`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `levels` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `society_id` int(11) NOT NULL DEFAULT '0',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `society_id` int NOT NULL DEFAULT '0',
   `student_no` varchar(15) NOT NULL,
   `name` varchar(45) NOT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `sex` tinyint(2) NOT NULL DEFAULT '1',
-  `phone` varchar(15) NOT NULL DEFAULT '',
-  `academy_id` int(11) NOT NULL DEFAULT '0',
-  `major_id` int(11) NOT NULL DEFAULT '0',
-  `mail` varchar(45) NOT NULL DEFAULT '',
-  `location` varchar(100) NOT NULL DEFAULT '' COMMENT '详细地址',
-  `native_place` varchar(100) NOT NULL DEFAULT '' COMMENT '籍贯',
-  `emer_name` varchar(15) NOT NULL DEFAULT '',
-  `emer_phone` varchar(15) NOT NULL DEFAULT '',
-  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `sex` tinyint DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `academy_id` int DEFAULT NULL,
+  `major_id` int DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `native_place` varchar(100) DEFAULT NULL,
+  `emer_name` varchar(15) DEFAULT NULL,
+  `emer_phone` varchar(15) DEFAULT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +252,7 @@ CREATE TABLE `levels` (
 
 LOCK TABLES `levels` WRITE;
 /*!40000 ALTER TABLE `levels` DISABLE KEYS */;
-INSERT INTO `levels` VALUES (5,1,'201430350301','陈光炜','2018-01-10 00:00:00','2019-12-01 00:00:00',1,'18819260875',4,13,'809871527@qq.com','','','','',1,'2018-03-14 15:48:41','2018-03-14 15:48:41'),(6,1,'201430350302','陈光炜2',NULL,NULL,1,'',0,0,'','','','','',1,'2018-03-11 16:44:43','2018-03-11 16:44:43'),(7,1,'201430350303','陈光炜2','2018-02-08 00:00:00','2018-09-05 00:00:00',2,'',0,0,'','','','','',2,'2018-03-11 16:48:15','2018-03-11 16:48:15');
+INSERT INTO `levels` VALUES (5,1,'201430350301','陈光炜','2018-01-10 00:00:00','2019-12-01 00:00:00',1,'18819260875',4,13,'809871527@qq.com','','','','',1,'2018-03-14 15:48:41','2018-03-14 15:48:41'),(6,1,'201430350302','陈光炜2',NULL,NULL,1,'',0,0,'','','','','',1,'2018-03-11 16:44:43','2018-03-11 16:44:43'),(7,1,'201430350303','陈光炜2','2018-02-08 00:00:00','2018-09-05 00:00:00',2,'',0,0,'','','','','',2,'2018-03-11 16:48:15','2018-03-11 16:48:15'),(8,1,'201430350308','陈光炜1',NULL,NULL,NULL,NULL,0,0,NULL,' ',' ',' ',' ',3,'2021-11-18 23:39:55','2021-11-18 23:39:55');
 /*!40000 ALTER TABLE `levels` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,13 +262,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `majors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `majors` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(45) NOT NULL COMMENT '名称',
-  `academy_id` int(11) NOT NULL COMMENT 'refe academy',
+  `academy_id` int NOT NULL COMMENT 'refe academy',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT='专业表';
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3 COMMENT='专业表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -287,17 +287,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `menu_lists`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menu_lists` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL DEFAULT '0',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pid` int NOT NULL DEFAULT '0',
   `name` varchar(45) NOT NULL,
   `css_class` varchar(45) NOT NULL DEFAULT '' COMMENT '图标样式',
-  `sort` tinyint(4) NOT NULL DEFAULT '1',
+  `sort` tinyint NOT NULL DEFAULT '1',
   `url` varchar(45) NOT NULL DEFAULT '',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,18 +316,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sliders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sliders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `society_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `society_id` int NOT NULL,
   `href` varchar(45) NOT NULL,
   `random_name` varchar(45) NOT NULL,
   `create_by` varchar(45) NOT NULL,
   `create_time` datetime NOT NULL,
-  `sort` tinyint(4) NOT NULL DEFAULT '1',
-  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `sort` tinyint NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -346,22 +346,22 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `staffs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `staffs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `student_no` varchar(12) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `society_id` int(11) NOT NULL,
-  `department_id` int(11) NOT NULL,
-  `job_id` int(11) NOT NULL,
-  `society_admin` tinyint(4) NOT NULL DEFAULT '2' COMMENT '1 社团管理员 2 不是',
+  `user_id` int NOT NULL,
+  `society_id` int NOT NULL,
+  `department_id` int NOT NULL,
+  `job_id` int NOT NULL,
+  `society_admin` tinyint NOT NULL DEFAULT '2' COMMENT '1 社团管理员 2 不是',
   `start_time` datetime NOT NULL,
   `end_time` datetime NOT NULL,
   `create_time` datetime NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT '2',
+  `status` tinyint NOT NULL DEFAULT '2',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -370,7 +370,7 @@ CREATE TABLE `staffs` (
 
 LOCK TABLES `staffs` WRITE;
 /*!40000 ALTER TABLE `staffs` DISABLE KEYS */;
-INSERT INTO `staffs` VALUES (1,'陈光炜1','201430350301',1,1,4,37,1,'2018-03-15 00:00:00','2019-09-19 00:00:00','2018-03-14 15:51:25',1),(2,'陈光炜1','201430350301',1,2,2,32,1,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-09 13:25:14',1),(3,'陈光炜3','201430350303',3,1,3,35,1,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-13 17:46:46',1),(4,'陈光炜4','201430350304',4,1,4,37,2,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-17 13:39:30',2),(5,'陈光炜1','201430350301',1,3,4,37,2,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-10 17:28:20',1),(6,'陈光炜2','201430350302',2,2,1,28,2,'2018-03-13 00:00:00','2018-06-01 00:00:00','2018-03-13 17:50:11',1),(7,'陈光炜3','201430350303',3,1,2,48,2,'2018-03-01 00:00:00','2018-03-16 00:00:00','2018-03-17 22:51:03',1);
+INSERT INTO `staffs` VALUES (1,'陈光炜1','201430350301',1,1,4,37,1,'2018-03-14 01:00:00','2019-09-18 01:00:00','2021-11-11 21:22:28',1),(2,'陈光炜1','201430350301',1,2,2,32,1,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-09 13:25:14',1),(3,'陈光炜3','201430350303',3,1,3,35,1,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-13 17:46:46',1),(4,'陈光炜4','201430350304',4,1,4,37,2,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-17 13:39:30',2),(5,'陈光炜1','201430350301',1,3,4,37,2,'2018-03-15 00:00:00','2019-03-03 00:00:00','2018-03-10 17:28:20',1),(6,'陈光炜2','201430350302',2,2,1,28,2,'2018-03-13 00:00:00','2018-06-01 00:00:00','2018-03-13 17:50:11',1),(7,'陈光炜3','201430350303',3,1,2,48,2,'2018-03-01 00:00:00','2018-03-16 00:00:00','2018-03-17 22:51:03',1);
 /*!40000 ALTER TABLE `staffs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -380,17 +380,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `stu_societies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stu_societies` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '主键',
   `logo` varchar(45) NOT NULL DEFAULT ' ',
   `name` varchar(45) NOT NULL COMMENT '名称',
-  `sort` int(11) NOT NULL DEFAULT '1' COMMENT '排序',
-  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1 可用 2 不可用 -1删除',
-  `society_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1 校级 2 院级 3 其他',
+  `sort` int NOT NULL DEFAULT '1' COMMENT '排序',
+  `status` tinyint NOT NULL DEFAULT '1' COMMENT '1 可用 2 不可用 -1删除',
+  `society_type` tinyint NOT NULL DEFAULT '1' COMMENT '1 校级 2 院级 3 其他',
   `create_time` datetime NOT NULL,
+  `num_of_people` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='社团表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COMMENT='社团表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -399,7 +400,7 @@ CREATE TABLE `stu_societies` (
 
 LOCK TABLES `stu_societies` WRITE;
 /*!40000 ALTER TABLE `stu_societies` DISABLE KEYS */;
-INSERT INTO `stu_societies` VALUES (1,'dd8816595ccf58938da3fbc623a706da.png','易班',1,1,1,'2018-02-19 11:38:59'),(2,'07e800820e58a85f44a0f83487aa2b17.jpg','数信红会',2,1,2,'2018-02-18 21:34:55'),(3,'default_logo.png','农学院红会',2,1,2,'2018-02-18 21:35:15'),(4,'06e5eeefd8346fbe82359c015900a058.png','蓝球协会',1,2,3,'2018-02-18 23:00:01'),(5,'e56e6388514bd25ce5cc85296df410a8.jpg','动漫协会',1,1,2,'2018-03-16 23:49:47'),(6,'60b2c58785f96f64a97706bb351c7e3e.jpg','书法社',1,1,2,'2018-03-16 23:50:10'),(7,'d6e4ffbf1ef1b8fff65ba7d3b6a64dd8.jpg','篮球协会',1,1,2,'2018-03-16 23:51:24');
+INSERT INTO `stu_societies` VALUES (1,'dd8816595ccf58938da3fbc623a706da.png','易班',1,1,1,'2018-02-19 11:38:59',1),(2,'07e800820e58a85f44a0f83487aa2b17.jpg','数信红会',2,1,2,'2018-02-18 21:34:55',1),(3,'default_logo.png','农学院红会1234',2,1,2,'2018-02-18 21:35:15',1),(4,'06e5eeefd8346fbe82359c015900a058.png','蓝球协会',1,2,3,'2018-02-18 23:00:01',1),(5,'e56e6388514bd25ce5cc85296df410a8.jpg','动漫协会',1,1,2,'2018-03-16 23:49:47',1),(6,'60b2c58785f96f64a97706bb351c7e3e.jpg','书法社',1,1,2,'2018-03-16 23:50:10',1),(7,'d6e4ffbf1ef1b8fff65ba7d3b6a64dd8.jpg','篮球协会',1,1,2,'2018-03-16 23:51:24',1);
 /*!40000 ALTER TABLE `stu_societies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -409,28 +410,28 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `student_no` varchar(15) NOT NULL,
   `password` varchar(45) NOT NULL DEFAULT '',
   `name` varchar(45) NOT NULL,
-  `sex` tinyint(2) NOT NULL DEFAULT '1',
+  `sex` tinyint NOT NULL DEFAULT '1',
   `phone` varchar(15) NOT NULL DEFAULT '',
-  `academy_id` int(11) NOT NULL DEFAULT '0',
-  `major_id` int(11) NOT NULL DEFAULT '0',
+  `academy_id` int NOT NULL DEFAULT '0',
+  `major_id` int NOT NULL DEFAULT '0',
   `mail` varchar(45) NOT NULL DEFAULT '',
   `location` varchar(100) NOT NULL DEFAULT '' COMMENT '详细地址',
   `native_place` varchar(100) NOT NULL DEFAULT '' COMMENT '籍贯',
   `emer_name` varchar(15) NOT NULL DEFAULT '',
   `emer_phone` varchar(15) NOT NULL DEFAULT '',
-  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `status` tinyint NOT NULL DEFAULT '1',
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
-  `system_admin` tinyint(4) DEFAULT '2',
+  `system_admin` tinyint DEFAULT '2',
   `user_pic` varchar(45) NOT NULL DEFAULT 'default_pic.png',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -439,7 +440,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'201430350301','4d9012b4a77a9524d675dad27c3276ab5705e5e8','陈光炜1',2,'18819260875',1,21,'809871527@qq.com','广州市华南农业大学华山区17栋','广东汕头1','陈光洪','13697467349',1,'2018-03-15 04:30:14','2018-03-15 05:11:46',1,'931d194a91016b64fe6135426be3e554.png'),(2,'201430350302','7c4a8d09ca3762af61e59520943dc26494f8941b','陈光炜2',1,'',0,0,'','','','','',1,'2018-03-13 17:58:27','2018-03-15 16:29:33',2,'d26b7937cd11b3abe0465e0141a68252.png'),(3,'201430350303','7c4a8d09ca3762af61e59520943dc26494f8941b','陈光炜3',2,'',0,0,'','','','','',1,'2018-03-06 23:18:18','2018-03-06 23:18:18',2,'defaudefault_pic.pnglt_pic'),(4,'201430350304','7c4a8d09ca3762af61e59520943dc26494f8941b','陈光炜4',1,'',0,0,'','','','','',1,'2018-03-07 01:07:40','2018-03-07 01:07:40',2,'default_pic.png');
+INSERT INTO `users` VALUES (1,'201430350301','4d9012b4a77a9524d675dad27c3276ab5705e5e8','陈光炜1',2,'18819260875',1,21,'809871527@qq.com','广州市华南农业大学华山区17栋','广东汕头1','陈光洪','13697467349',1,'2018-03-15 04:30:14','2021-11-18 20:10:23',1,'931d194a91016b64fe6135426be3e554.png'),(2,'201430350302','7c4a8d09ca3762af61e59520943dc26494f8941b','陈光炜2',1,'',0,0,'','','','','',1,'2018-03-13 17:58:27','2018-03-15 16:29:33',2,'d26b7937cd11b3abe0465e0141a68252.png'),(3,'201430350303','7c4a8d09ca3762af61e59520943dc26494f8941b','陈光炜3',2,'',0,0,'','','','','',1,'2018-03-06 23:18:18','2018-03-06 23:18:18',2,'defaudefault_pic.pnglt_pic'),(4,'201430350304','7c4a8d09ca3762af61e59520943dc26494f8941b','陈光炜4',1,'',0,0,'','','','','',1,'2018-03-07 01:07:40','2018-03-07 01:07:40',2,'default_pic.png'),(5,'201423412323','7c4a8d09ca3762af61e59520943dc26494f8941b','12341',1,'18868687878',0,0,'','','','','',1,'2021-10-29 22:47:09','2021-10-29 22:47:09',2,'default_pic.png'),(6,'201430350309','7c4a8d09ca3762af61e59520943dc26494f8941b','adasd',1,'',0,0,'','','','','',1,'2021-11-18 23:35:16','2021-11-18 23:35:16',2,'default_pic.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -449,13 +450,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vote_options`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vote_options` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `vote_id` int(11) NOT NULL,
+  `vote_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -474,15 +475,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vote_records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vote_records` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `vote_id` int(11) NOT NULL,
-  `vote_option_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `vote_id` int NOT NULL,
+  `vote_option_id` int NOT NULL,
+  `user_id` int NOT NULL,
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -501,19 +502,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `votes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `votes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `society_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `society_id` int NOT NULL,
   `name` varchar(45) NOT NULL,
   `content` text NOT NULL,
   `start_time` datetime NOT NULL,
   `end_time` datetime NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` int NOT NULL,
   `create_by` varchar(45) NOT NULL,
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -535,4 +536,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-18  0:48:36
+-- Dump completed on 2021-11-19  0:06:00
