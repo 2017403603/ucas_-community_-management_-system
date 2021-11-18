@@ -3,7 +3,7 @@ module ApplicationHelper
   def get_dict (key)
     dict = {}
     dict[:society_type] = {"1" => "校级", "2" => "院级", "3" => "其他"}
-    dict[:status] = {"1" => "可用", "2" => "停用"}
+    dict[:status] = {"1" => "可用", "2" => "停用", "3" => " 待审核"}
     dict[:sex] = {"1" => "男", "2" => "女"}
     dict[:admin] = {"1" => "是", "2" => "否"}
     dict[key]
