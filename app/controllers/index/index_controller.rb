@@ -1,6 +1,12 @@
+$length = 1
 module Index
   class IndexController < Index::ApplicationController
     before_action :set_menu_name
+    
+    def act_id
+      $length = $length + 1
+      puts $length
+    end
     def index
       @sliders = Slider.by_status.by_society_id(session["index_society"]["id"]).by_sort
       @articles = Article.by_status.by_society_id(session["index_society"]["id"]).by_create_time.limit(6)
@@ -28,10 +34,12 @@ module Index
                         .by_society_id(session["index_society"]["id"])
                         .by_create_time
                         .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
+      @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first                 
     end
 
     def activity_detail
       @activity =  Activity.by_status.by_society_id(session["index_society"]["id"]).find(params[:id])
+
       redirect_to '/404.html' if activity.blank?
     end
 
@@ -68,11 +76,40 @@ module Index
           render json: {code: 200, message: '新增成功'}
         end
       end
-
-
       
     end
 
+    def join_activity
+    
+      student_no = session["user"]["student_no"]
+      if !student_no
+        render json: {code: 201, errors: '请先登陆'}
+      else
+        #society_id = session["index_society"]["id"]
+        data1 = set_data1
+        res = Con.create(data1)
+        if res.new_record?
+          render json: {code: 201, message: res.errors.messages}
+        else
+          render json: {code: 200, message: '新增成功'}
+          act_id
+        end
+      end
+      
+    end
+    
+    def set_data1
+      data1 = {
+          activity_id: $length,
+          society_id: session["index_society"]["id"],
+          student_no: session["user"]["student_no"],
+          name: session["user"]["name"],
+          start_time: Time.now.inspect,
+          status: 3,
+          create_time: Time.now.inspect
+      }
+    end
+    
     def set_data
       data = {
           society_id: session["index_society"]["id"],
@@ -108,6 +145,7 @@ module Index
       render json: {code: 200, message: 'success', data: data}
     end
 
+    
     private
     # 设置导航默认选中
     def set_menu_name

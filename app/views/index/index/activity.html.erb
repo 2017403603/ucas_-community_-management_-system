@@ -40,12 +40,12 @@
               <td style="width: 300px;"><%= (society2=get_data_by_pid('id',e.society_id,StuSociety)).blank? ? '' : society2.first.name %></td> 
               <td style="width: 300px;"><%= e.apply_start_time.to_s[0..15] %></td>
               <td style="width: 300px;"><%= e.create_time.to_s[0..10] %></td>
-              <td style="width: 300px;"><%= submit_tag '申请加入活动' %></td>
+              <td style="width: 300px;"><%= button_to "申请加入", '/index/activity/joinActivity', method: :put %></td>
               
             </tr>
             <% end %>
 
-    
+     
           </ul>
         </div>
       </div>
