@@ -250,11 +250,33 @@ CREATE TABLE `levels` (
 -- Dumping data for table `levels`
 --
 
-LOCK TABLES `levels` WRITE;
-/*!40000 ALTER TABLE `levels` DISABLE KEYS */;
-INSERT INTO `levels` VALUES (5,1,'201430350301','陈光炜','2018-01-10 00:00:00','2019-12-01 00:00:00',1,'18819260875',4,13,'809871527@qq.com','','','','',1,'2018-03-14 15:48:41','2018-03-14 15:48:41'),(6,1,'201430350302','陈光炜2',NULL,NULL,1,'',0,0,'','','','','',1,'2018-03-11 16:44:43','2018-03-11 16:44:43'),(7,1,'201430350303','陈光炜2','2018-02-08 00:00:00','2018-09-05 00:00:00',2,'',0,0,'','','','','',2,'2018-03-11 16:48:15','2018-03-11 16:48:15'),(8,1,'201430350308','陈光炜1',NULL,NULL,NULL,NULL,0,0,NULL,' ',' ',' ',' ',3,'2021-11-18 23:39:55','2021-11-18 23:39:55');
-/*!40000 ALTER TABLE `levels` ENABLE KEYS */;
-UNLOCK TABLES;
+
+
+--
+-- Table structure for table `levels`
+--
+
+DROP TABLE IF EXISTS `cons`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cons` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `activity_id` int NOT NULL DEFAULT '0',
+  `society_id` int NOT NULL DEFAULT '0',
+  `student_no` varchar(15) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `status` tinyint NOT NULL DEFAULT '1',
+  `create_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cons`
+--
+
+
 
 --
 -- Table structure for table `majors`
