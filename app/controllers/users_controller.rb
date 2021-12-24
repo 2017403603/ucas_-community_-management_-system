@@ -32,7 +32,7 @@ class UsersController < ApplicationController
         name: name,
         sex: sex,
         phone: phone,
-        system_admin: 1,
+        system_admin: 2,
         status: 1,
         password: Digest::SHA1.hexdigest(password),
         create_time: Time.now.inspect,

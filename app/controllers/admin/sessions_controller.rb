@@ -28,7 +28,7 @@ module Admin
 
     def destroy
       reset_session
-      redirect_to admin_sessions_new_path
+      redirect_to  index_index_url
     end
 
   end
