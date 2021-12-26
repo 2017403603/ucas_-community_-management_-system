@@ -63,6 +63,11 @@ module Index
     end
 
     def join_society
+      student = session["user"]
+      if !student
+        render json: {code: 201, errors: '请先登陆'}
+        return
+      end
       student_no = session["user"]["student_no"]
       if !student_no
         render json: {code: 201, errors: '请先登陆'}
