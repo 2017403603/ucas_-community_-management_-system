@@ -8,17 +8,17 @@ module Index
       puts $length
     end
     def index
-      @sliders = Slider.by_status.by_society_id(session["index_society"]["id"]).by_sort
-      @articles = Article.by_status.by_society_id(session["index_society"]["id"]).by_create_time.limit(6)
-      @activities = Activity.by_status.by_society_id(session["index_society"]["id"]).by_create_time.limit(6)
-      @attachments = Attachment.by_status.by_society_id(session["index_society"]["id"]).by_create_time.limit(6)
+      @sliders = Slider.by_status.by_sort
+      @articles = Article.by_status.by_create_time.limit(6)
+      @activities = Activity.by_status.by_create_time.limit(6)
+      @attachments = Attachment.by_status.by_create_time.limit(6)
       @societies = StuSociety.by_status
     end
 
     def article
       @articles = Article
                       .by_status
-                      .by_society_id(session["index_society"]["id"])
+                      # .by_society_id(session["index_society"]["id"])
                       .by_create_time
                       .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
     end
