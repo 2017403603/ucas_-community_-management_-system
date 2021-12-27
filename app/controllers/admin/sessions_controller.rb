@@ -19,7 +19,12 @@ module Admin
           session[:societies] = StuSociety.where(id: arr_society_ids)
           render json: { code: 200, message: res['message'] }
         else
-          render json: { code: 201, errors: '还未加入任何社团' }
+          session[:user] = res['user']
+          user_society_ids = Staff.find_user_society_ids(0)
+          arr_society_ids = user_society_ids.inject([]) {|result, n| result << n.society_id}
+          session[:society_id] = user_society_ids.first.society_id
+          session[:societies] = StuSociety.where(id: arr_society_ids)
+          render json: { code: 200, message: res['message'] }
         end
       else
         render json: { code: res['code'], errors: res['message'] }
