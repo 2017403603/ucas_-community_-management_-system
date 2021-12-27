@@ -17,10 +17,10 @@ module Index
 
     def article
       @articles = Article
-                      .by_status
-                      # .by_society_id(session["index_society"]["id"])
-                      .by_create_time
-                      .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
+                     .by_status
+                     .by_society_id(session["index_society"]["id"])
+                     .by_create_time
+                     .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
     end
 
     def article_detail
@@ -53,6 +53,7 @@ module Index
     def society
       @societies = StuSociety
                       .by_status
+                      .by_society_id
                       .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
       @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
     end

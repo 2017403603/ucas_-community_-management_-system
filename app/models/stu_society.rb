@@ -15,5 +15,6 @@ class StuSociety < ApplicationRecord
 
   scope :by_name_search, -> name { where("name like ?", "%#{name}%") if name.present? }
   scope :by_status, -> { where(status: 1) }
+  scope :by_society_id, ->{where("id != 0")}
   scope :by_sort, -> { order(:sort) }
 end
