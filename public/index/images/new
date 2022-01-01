@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="qiUzfDOhf+GRz+LFi9caR7jX8r9oplsVE1I9d8y/7JLnRgTA9Ep5mGGvxfWRtxD6fSJZh4LeYsFOCWM2XOCRpA==" />
+  <title>果壳-社团信息管理系统-登录</title>
+
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/style-responsive.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="login-body">
+
+<div class="container">
+    <form class="form-signin">
+      <div class="form-signin-heading text-center">
+        <h1 class="sign-title">登 录</h1>
+        <img src="/images/login-logo.png" alt=""/>
+      </div>
+      <div class="login-wrap">
+       <label for="exampleInputPassword1"> <i class="bi_tian"></i>学号</label>
+        <input type="text" name="student_no" class="form-control" placeholder="" autofocus>
+         <label for="exampleInputPassword1"> <i class="bi_tian"></i>密码</label>
+        <input type="password" name="password" class="form-control" placeholder="">
+
+        <button class="btn btn-lg btn-login btn-block" type="button" data-url="/admin/sessions/create" id="submit_data">
+          <i class="fa fa-check"></i>
+        </button>
+        <label class="checkbox">
+          <span class="pull-right">
+          <a data-toggle="modal"  href="../../users/signup" id="jump"> 注册</a>
+        </span>
+        </label>
+
+      </div>
+    </form>
+      <!-- Modal -->
+          </div>
+        </div>
+      </div>
+      <!-- modal -->
+</div>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/modernizr.min.js"></script>
+<script src="/js/my.js"></script>
+<script type="text/javascript" charset="utf-8">
+  function jumpIndex() {
+      window.location.href = '/index/index'
+  }
+    $('#submit_data').click(function () {
+        var _this = $(this);
+        var url = _this.attr('data-url');
+        var data = {};
+        data['student_no'] = $('input[name=student_no]').val();
+        data['password'] = $('input[name=password]').val();
+        doRequest(_this,url,'POST',data,jumpIndex);
+    });
+</script>
+
+</body>
+</html>
