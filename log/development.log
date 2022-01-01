@@ -32025,3 +32025,184 @@ Processing by Index::IndexController#get_societies as JSON
 Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2022-01-01 23:42:46 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.2ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.2ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (70.8ms)
+Completed 200 OK in 465ms (Views: 68.8ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-01 23:42:47 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (2.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (1.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-01-01 23:42:54 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2022-01-01 23:42:54 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (2.1ms)
+Completed 200 OK in 35ms (Views: 4.9ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2022-01-01 23:42:57 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"201430350301", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '201430350301' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 1 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 7.6ms)
+
+
+  [1m[36mStuSociety Load (1.2ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` IN (2, 3)[0m
+Started GET "/index/index" for 127.0.0.1 at 2022-01-01 23:42:58 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.0ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (2.8ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.2ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.1ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (17.8ms)
+Completed 200 OK in 24ms (Views: 15.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-01 23:42:58 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.9ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-01-01 23:42:59 +0800
+Processing by Admin::MyController#index as HTML
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (1.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (1.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (0.6ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (0.8ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (23.3ms)
+  [1m[36mStuSociety Load (1.3ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 2 LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 27.2ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/admin/sliders?menu_id=17" for 127.0.0.1 at 2022-01-01 23:43:02 +0800
+Processing by Admin::SlidersController#index as HTML
+  Parameters: {"menu_id"=>"17"}
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.8ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 17 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/sliders/index.html.erb within admin/layouts/application
+  [1m[36mSlider Load (0.6ms)[0m  [1m[34mSELECT  `sliders`.* FROM `sliders` WHERE (society_id = 2) ORDER BY `sliders`.`sort` ASC LIMIT 10 OFFSET 0[0m
+  Rendered admin/sliders/index.html.erb within admin/layouts/application (3.4ms)
+  [1m[36mStuSociety Load (0.6ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 2 LIMIT 1[0m
+Completed 200 OK in 19ms (Views: 7.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-02 00:29:33 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (2.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (1.1ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.7ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (121.5ms)
+Completed 200 OK in 506ms (Views: 124.0ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-02 00:29:34 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-01-02 00:29:42 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2022-01-02 00:29:42 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (0.9ms)
+Completed 200 OK in 24ms (Views: 2.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/admin/sessions/create" for 127.0.0.1 at 2022-01-02 00:29:44 +0800
+Processing by Admin::SessionsController#create as JSON
+  Parameters: {"student_no"=>"201430350301", "password"=>"[FILTERED]"}
+  [1m[36mMenuList Load (0.4ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '201430350301' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mStaff Load (1.1ms)[0m  [1m[34mSELECT `staffs`.`society_id` FROM `staffs` WHERE (user_id = 1 and status = 1) GROUP BY `staffs`.`society_id`[0m
+Completed 200 OK in 49ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` IN (2, 3)[0m
+Started GET "/index/index" for 127.0.0.1 at 2022-01-02 00:29:44 +0800
+Processing by Index::IndexController#index as HTML
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.9ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.8ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (18.1ms)
+Completed 200 OK in 27ms (Views: 19.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-02 00:29:44 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (2.5ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-01-02 00:29:45 +0800
+Processing by Admin::MyController#index as HTML
+  [1m[36mMenuList Load (1.2ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.7ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendering admin/my/index.html.erb within admin/layouts/application
+  [1m[36mAcademy Load (0.7ms)[0m  [1m[34mSELECT `academies`.* FROM `academies` WHERE `academies`.`id` = 1[0m
+  [1m[36mMajor Load (0.6ms)[0m  [1m[34mSELECT `majors`.* FROM `majors` WHERE `majors`.`id` = 21[0m
+  Rendered admin/my/index.html.erb within admin/layouts/application (41.9ms)
+  [1m[36mStuSociety Load (1.4ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 2 LIMIT 1[0m
+Completed 200 OK in 73ms (Views: 47.4ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/admin/sliders?menu_id=17" for 127.0.0.1 at 2022-01-02 00:29:48 +0800
+Processing by Admin::SlidersController#index as HTML
+  Parameters: {"menu_id"=>"17"}
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`status` = 1 AND (pid in (1,2,3,4) or id in (1,2,3,4)) ORDER BY `menu_lists`.`sort` ASC[0m
+  [1m[36mMenuList Load (0.6ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 17 LIMIT 1[0m
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 3 LIMIT 1[0m
+  Rendering admin/sliders/index.html.erb within admin/layouts/application
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT  `sliders`.* FROM `sliders` WHERE (society_id = 2) ORDER BY `sliders`.`sort` ASC LIMIT 10 OFFSET 0[0m
+  Rendered admin/sliders/index.html.erb within admin/layouts/application (2.9ms)
+  [1m[36mStuSociety Load (0.5ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`id` = 2 LIMIT 1[0m
+Completed 200 OK in 19ms (Views: 8.7ms | ActiveRecord: 2.5ms)
+
+
