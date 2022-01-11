@@ -18,13 +18,13 @@ module Index
     def article
       @articles = Article
                      .by_status
-                     .by_society_id(session["index_society"]["id"])
                      .by_create_time
                      .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
     end
 
     def article_detail
-      @article =  Article.by_status.by_society_id(session["index_society"]["id"]).find(params[:id])
+      # @article =  Article.by_status.by_society_id(session["index_society"]["id"]).find(params[:id])
+      @article =  Article.by_status.find(params[:id])
       redirect_to '/404.html' if @article.blank?
     end
 
@@ -39,7 +39,6 @@ module Index
 
     def activity_detail
       @activity =  Activity.by_status.by_society_id(session["index_society"]["id"]).find(params[:id])
-
       redirect_to '/404.html' if activity.blank?
     end
 
