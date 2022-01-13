@@ -34031,3 +34031,597 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:07:29 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (267.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (1.0ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.4ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (1.8ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (3.2ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (1.1ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (59.9ms)
+Completed 200 OK in 4149ms (Views: 175.3ms | ActiveRecord: 694.9ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-13 20:07:35 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.7ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/volunteer/images/favicon.ico" for 127.0.0.1 at 2022-01-13 20:07:35 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/volunteer/images/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:08:11 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:08:30 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"ss", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 194ms (Views: 0.4ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:10:27 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.7ms)
+Completed 200 OK in 150ms (Views: 5.4ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:10:34 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"ss", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 12ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:12:27 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"ss", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:13:03 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.4ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (3.5ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (51.9ms)
+Completed 200 OK in 255ms (Views: 48.4ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-13 20:13:04 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.8ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:13:05 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:13:24 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/miuzki/ucas_-community_-management_-system/app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+  validates :
+             ^):
+  
+app/models/user.rb:7: syntax error, unexpected ':', expecting keyword_end
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:13:48 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (2.6ms)
+Completed 200 OK in 173ms (Views: 9.3ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:13:51 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 32ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:13:58 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"123", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:15:03 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.8ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (3.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (2.9ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (45.0ms)
+Completed 200 OK in 300ms (Views: 39.5ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-13 20:15:04 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (1.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:15:05 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:15:16 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"11", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (138.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS `society`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `society` DEFAULT CHARACTER SET `utf8`[0m
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:16:15 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"11", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 208ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:16:17 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"11", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:16:19 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"11", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:16:39 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"11", "student_no"=>"202128015329003", "phone"=>"13587280647", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:16:44 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"11", "student_no"=>"202128015329003", "phone"=>"13587280647", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:16:49 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'society.sliders' doesn't exist: SHOW FULL FIELDS FROM `sliders`):
+  
+app/models/slider.rb:9:in `block in <class:Slider>'
+app/controllers/index/index_controller.rb:11:in `index'
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:18:26 +0800
+Processing by Index::IndexController#index as HTML
+Completed 500 Internal Server Error in 197ms
+
+
+  
+ActiveRecord::NoDatabaseError (Unknown database 'society'):
+  
+app/models/slider.rb:9:in `block in <class:Slider>'
+app/controllers/index/index_controller.rb:11:in `index'
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:18:29 +0800
+Processing by Index::IndexController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ActiveRecord::NoDatabaseError (Unknown database 'society'):
+  
+app/models/slider.rb:9:in `block in <class:Slider>'
+app/controllers/index/index_controller.rb:11:in `index'
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:19:28 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.5ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (1.4ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.4ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (85.6ms)
+Completed 200 OK in 320ms (Views: 83.6ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-13 20:19:28 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:19:29 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:19:47 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:21:25 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (1.2ms)
+Completed 200 OK in 153ms (Views: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-13 20:22:18 +0800
+Processing by Index::IndexController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mStuSociety Load (0.6ms)[0m  [1m[34mSELECT  `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC LIMIT 1[0m
+  Rendering index/index/index.html.erb within index/layouts/application
+  [1m[36mSlider Load (0.4ms)[0m  [1m[34mSELECT `sliders`.* FROM `sliders` WHERE `sliders`.`status` = 1 ORDER BY `sliders`.`sort` ASC[0m
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  `activities`.* FROM `activities` WHERE `activities`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  [1m[36mAttachment Load (0.3ms)[0m  [1m[34mSELECT  `attachments`.* FROM `attachments` WHERE `attachments`.`status` = 1 ORDER BY create_time desc LIMIT 6[0m
+  Rendered index/index/index.html.erb within index/layouts/application (37.8ms)
+Completed 200 OK in 107ms (Views: 40.7ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/index/get_societies" for 127.0.0.1 at 2022-01-13 20:22:19 +0800
+Processing by Index::IndexController#get_societies as JSON
+  [1m[36mStuSociety Load (0.4ms)[0m  [1m[34mSELECT `stu_societies`.* FROM `stu_societies` WHERE `stu_societies`.`status` = 1 ORDER BY `stu_societies`.`sort` ASC[0m
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/volunteer/images/favicon.ico" for 127.0.0.1 at 2022-01-13 20:22:19 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/volunteer/images/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:22:20 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:22:32 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:25:14 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.9ms)
+Completed 200 OK in 164ms (Views: 4.1ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:25:18 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:25:37 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 5ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:25:49 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 167ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:25:51 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:25:53 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:25:58 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/user.rb:7:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:26:44 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 56ms (Views: 0.4ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:27:42 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:33:31 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' LIMIT 1[0m
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`student_no`, `password`, `name`, `phone`, `create_time`, `update_time`) VALUES ('202128015329003', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'shizheyu', '17369427320', '2022-01-13 20:33:31', '2022-01-13 20:33:31')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 51ms (Views: 0.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-01-13 20:33:31 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2022-01-13 20:33:31 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (0.3ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (2.9ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (0.7ms)
+Completed 200 OK in 23ms (Views: 4.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/signup" for 127.0.0.1 at 2022-01-13 20:33:43 +0800
+Processing by UsersController#signup as HTML
+  Rendering users/signup.html.erb
+  Rendered users/signup.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:33:47 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329003", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329003' LIMIT 1[0m
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:33:51 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329004", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329004' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:33:54 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329004", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329004' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:33:57 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329004", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329004' LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/signup" for 127.0.0.1 at 2022-01-13 20:34:02 +0800
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"shizheyu", "student_no"=>"202128015329004", "phone"=>"17369427320", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "sex"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329004' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`student_no` = '202128015329004' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`student_no`, `password`, `name`, `phone`, `create_time`, `update_time`) VALUES ('202128015329004', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'shizheyu', '17369427320', '2022-01-13 20:34:02', '2022-01-13 20:34:02')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2022-01-13 20:34:03 +0800
+Processing by Admin::MyController#index as HTML
+Redirected to http://localhost:3000/admin/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sessions/new" for 127.0.0.1 at 2022-01-13 20:34:03 +0800
+Processing by Admin::SessionsController#new as HTML
+  [1m[36mMenuList Load (1.1ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 5 LIMIT 1[0m
+  [1m[36mMenuList Load (0.5ms)[0m  [1m[34mSELECT  `menu_lists`.* FROM `menu_lists` WHERE `menu_lists`.`id` = 1 LIMIT 1[0m
+  Rendering admin/sessions/new.html.erb
+  Rendered admin/sessions/new.html.erb (1.0ms)
+Completed 200 OK in 20ms (Views: 5.6ms | ActiveRecord: 2.4ms)
+
+

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :sex,
             presence: { message: "性别不能为空" },
             numericality: { only_integer: true, message: "性别格式不对" }
-  validates :phone, format: { with: /\A(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}\z/, message: "电话格式不对" },
+  validates :phone, format: { with: ~ /(^|\s)86[\s]+[1-9][0-9]{1,2}\s/, message: "电话格式不对" },
             unless: Proc.new{ |a| a.phone.blank? }
   validates :academy_id, format: { with: /\A[0-9]*\z/, message: "学院格式不对" },
             unless: Proc.new{ |a| a.academy_id.blank? }
