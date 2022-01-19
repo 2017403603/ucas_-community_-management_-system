@@ -58,8 +58,8 @@ module Index
 
     def society_detail
       # @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
-      @society = StuSociety.by_status.find(params[:id])
-      redirect_to '/404.html' if society.blank?
+      @introduce = Introduce.find_society_introduce(params[:id]).first
+      redirect_to '/404.html' if @introduce.blank?
     end
 
     def join_society
