@@ -517,6 +517,21 @@ CREATE TABLE `votes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+DROP TABLE IF EXISTS `cons`;  
+/*!40101 SET @saved_cs_client = @@character_set_client */;  
+/*!50503 SET character_set_client = utf8mb4 */;  
+CREATE TABLE `cons` (  
+   `id` int NOT NULL AUTO_INCREMENT,  
+   `activity_id` int NOT NULL DEFAULT '0',  
+   `society_id` int NOT NULL DEFAULT '0',  
+   `student_no` varchar(15) NOT NULL,  
+   `name` varchar(45) NOT NULL,  
+   `start_time` datetime DEFAULT NULL,  
+   `status` tinyint NOT NULL DEFAULT '1',  
+   `create_time` datetime NOT NULL,  
+   PRIMARY KEY (`id`)  
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+ 
 --
 -- Dumping data for table `votes`
 --
@@ -537,3 +552,4 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-01-11 21:17:37
+
