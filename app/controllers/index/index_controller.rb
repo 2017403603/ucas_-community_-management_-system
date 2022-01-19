@@ -33,11 +33,11 @@ module Index
                         .by_status
                         .by_create_time
                         .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
-      @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first                 
+      # @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first                 
     end
 
     def activity_detail
-      @activity =  Activity.by_status.by_society_id(session["index_society"]["id"]).find(params[:id])
+      @activity =  Activity.by_status.find(params[:id])
       redirect_to '/404.html' if activity.blank?
     end
 
@@ -53,12 +53,13 @@ module Index
                       .by_status
                       .by_society_id
                       .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
-      @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
+      # @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
     end
 
     def society_detail
-      
-      @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
+      # @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first
+      @society = StuSociety.by_status.find(params[:id])
+      redirect_to '/404.html' if society.blank?
     end
 
     def join_society
