@@ -31,7 +31,6 @@ module Index
     def activity
       @activities = Activity
                         .by_status
-                        .by_society_id(session["index_society"]["id"])
                         .by_create_time
                         .paginate(page: params['page'] || 1, per_page: params['per_page'] || 10)
       @introduce = Introduce.find_society_introduce(session["index_society"]["id"]).first                 
