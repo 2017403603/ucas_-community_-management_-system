@@ -32,9 +32,9 @@ class Level < ApplicationRecord
   before_create :check_student_no
 
   def check_student_no
-    user = Level.where(student_no: student_no).first
+    user = Level.where(student_no: student_no, society_id: society_id).first
     if user
-      errors.messages['error1'] = '帐号已经存在'
+      errors.messages['error1'] = '该申请已经存在'
       throw :abort
     end
   end

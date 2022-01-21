@@ -53,6 +53,7 @@ Rails.application.routes.draw do
     get '/attachment', to: 'index#attachment'
     get '/society', to: 'index#society'
     put '/society/joinSociety', to: 'index#join_society'
+    put '/society/joinSociety/:id', to: 'index#join_society'
     put '/activity/joinActivity', to: 'index#join_activity'
     get '/change/:id', to: 'index#change'
     get '/article/:id', to: 'index#article_detail'

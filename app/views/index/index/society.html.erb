@@ -36,7 +36,7 @@
                 <td style="width: 300px;"><%= e.num_of_people %></td> 
                 <td style="width: 600px;"><%= e.create_time.to_s[0..10] %></td>
                 <td style="width: 300px;">
-                  <%= button_to "申请加入", '/index/society/joinSociety', method: :put %>
+                  <%= button_to "申请加入", "/index/society/joinSociety/" + e.id.to_s, method: :put %>
                 </td>
               <tr>
             <% end %>

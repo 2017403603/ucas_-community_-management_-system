@@ -72,7 +72,7 @@ module Index
       if !student_no
         render json: {code: 201, errors: '请先登陆'}
       else
-        society_id = session["index_society"]["id"]
+        society_id = params[:id]
         data = set_data
         res = Level.create(data)
         if res.new_record?
@@ -120,8 +120,10 @@ module Index
     end
     
     def set_data
+      society_id = params[:id]
+      # puts "debug!!! society_id = " + society_id.to_s
       data = {
-          society_id: session["index_society"]["id"],
+          society_id: params[:id],
           student_no: session["user"]["student_no"],
           name: session["user"]["name"],
           start_time: Time.now.inspect,
