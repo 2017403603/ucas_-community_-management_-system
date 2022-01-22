@@ -29,6 +29,7 @@ class Level < ApplicationRecord
   scope :by_name_student_no_search, -> name { where("(name like ? or student_no like ?)", "%#{name}%", "%#{name}%") if name.present? }
   scope :by_status, -> { where(status: 1) }
   scope :by_society_id, -> society_id {where("society_id = ?", society_id)}
+  scope :by_student_no, -> student_no {where("student_no = ?", student_no)}
   before_create :check_student_no
 
   def check_student_no

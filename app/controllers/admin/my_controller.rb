@@ -40,6 +40,11 @@ module Admin
       society_id = params[:id].to_i
       user_society_ids = Staff.find_user_society_ids(session['user']['id'])
       arr_society_ids = user_society_ids.inject([]) {|result, n| result << n.society_id}
+
+      user_society_ids2 = Level.by_student_no(params['student_no'])
+      arr_society_ids2 = user_society_ids2.inject([]) {|result, n| result << n.society_id}
+
+      
       if arr_society_ids.include?(society_id)
         session[:society_id] = society_id
         session.delete(:role)
