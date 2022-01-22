@@ -15,11 +15,11 @@ module Admin
         puts "---------------------"
         user_society_ids = Staff.find_user_society_ids(res['user'].id)
         user_society_ids2 = Level.by_student_no(params['student_no'])
-        if user_society_ids.blank?
-          user_society_ids = user_society_ids2
-        else 
-          user_society_ids.concat(user_society_ids2)
-        end
+        # if user_society_ids.blank?
+
+        # else 
+
+        # end
         
         arr_society_ids = user_society_ids.inject([]) {|result, n| result << n.society_id}
         arr_society_ids2 = user_society_ids2.inject([]) {|result, n| result << n.society_id}
