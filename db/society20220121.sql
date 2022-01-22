@@ -11,7 +11,7 @@
  Target Server Version : 50736
  File Encoding         : 65001
 
- Date: 21/01/2022 23:42:06
+ Date: 22/01/2022 13:44:22
 */
 
 SET NAMES utf8mb4;
@@ -141,12 +141,13 @@ CREATE TABLE `cons` (
   `status` tinyint(4) NOT NULL DEFAULT '1',
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cons
 -- ----------------------------
 BEGIN;
+INSERT INTO `cons` (`id`, `activity_id`, `society_id`, `student_no`, `name`, `start_time`, `status`, `create_time`) VALUES (1, 1, 0, '987654321', '小明', '2022-01-22 13:37:59', 3, '2022-01-22 13:37:59');
 COMMIT;
 
 -- ----------------------------
@@ -248,7 +249,7 @@ CREATE TABLE `levels` (
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of levels
@@ -264,6 +265,7 @@ INSERT INTO `levels` (`id`, `society_id`, `student_no`, `name`, `start_time`, `e
 INSERT INTO `levels` (`id`, `society_id`, `student_no`, `name`, `start_time`, `end_time`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`) VALUES (12, 2, '147258369', '严xx', '2022-01-21 20:45:15', '2022-01-21 20:45:15', NULL, NULL, 0, 0, NULL, ' ', ' ', ' ', ' ', 3, '2022-01-21 20:45:15', '2022-01-21 20:45:15');
 INSERT INTO `levels` (`id`, `society_id`, `student_no`, `name`, `start_time`, `end_time`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`) VALUES (13, 1, '147258369', '严xx', '2022-01-21 20:45:19', '2022-01-21 20:45:19', NULL, NULL, 0, 0, NULL, ' ', ' ', ' ', ' ', 3, '2022-01-21 20:45:19', '2022-01-21 20:45:19');
 INSERT INTO `levels` (`id`, `society_id`, `student_no`, `name`, `start_time`, `end_time`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`) VALUES (14, 2, '369258147', '石xx', '2022-01-21 00:00:00', '2022-01-21 00:00:00', 1, NULL, 0, 0, NULL, ' ', ' ', ' ', ' ', 1, '2022-01-21 20:48:42', '2022-01-21 20:48:42');
+INSERT INTO `levels` (`id`, `society_id`, `student_no`, `name`, `start_time`, `end_time`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`) VALUES (15, 2, '987654321', '小明', '2022-01-22 00:00:00', '2022-01-22 00:00:00', 1, NULL, 0, 0, NULL, ' ', ' ', ' ', ' ', 1, '2022-01-22 13:39:54', '2022-01-22 13:39:54');
 COMMIT;
 
 -- ----------------------------
@@ -406,7 +408,7 @@ CREATE TABLE `stu_societies` (
   `create_time` datetime NOT NULL,
   `num_of_people` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='社团表';
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='社团表';
 
 -- ----------------------------
 -- Records of stu_societies
@@ -465,13 +467,13 @@ CREATE TABLE `users` (
   `system_admin` tinyint(4) DEFAULT '2',
   `user_pic` varchar(45) NOT NULL DEFAULT 'default_pic.png',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (1, '201430350301', '4d9012b4a77a9524d675dad27c3276ab5705e5e8', '程哥哥', 1, '17369427329', 1, 35, '705328646@qq.com', '国科大雁栖湖西区', '湖南永州', '李友林', '13637463186', 1, '2018-03-15 04:30:14', '2022-01-21 12:50:36', 1, 'b67b22c0928d69ef83fab84ec1997aa1.png');
+INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (1, '201430350301', '4d9012b4a77a9524d675dad27c3276ab5705e5e8', '程哥哥', 1, '17369427329', 1, 35, '705328646@qq.com', '国科大雁栖湖西区', '湖南永州', '李友林', '13637463186', 1, '2018-03-15 04:30:14', '2022-01-22 11:33:26', 1, 'b67b22c0928d69ef83fab84ec1997aa1.png');
 INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (2, '201430350302', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'test2', 1, '', 0, 0, '', '', '', '', '', 1, '2018-03-13 17:58:27', '2018-03-15 16:29:33', 2, 'd26b7937cd11b3abe0465e0141a68252.png');
 INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (3, '201430350303', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'test3', 2, '', 0, 0, '', '', '', '', '', 1, '2018-03-06 23:18:18', '2018-03-06 23:18:18', 2, 'defaudefault_pic.pnglt_pic');
 INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (4, '201430350304', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'test4', 1, '', 0, 0, '', '', '', '', '', 1, '2018-03-07 01:07:40', '2018-03-07 01:07:40', 2, 'default_pic.png');
@@ -483,6 +485,7 @@ INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `ac
 INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (10, '2017402522', '7c4a8d09ca3762af61e59520943dc26494f8941b', '廖晶', 2, '13974450407', 1, 36, '152444985@qq.com', '张家界水文站', '湖南张家界', '', '', 1, '2022-01-21 17:43:42', '2022-01-21 17:59:03', 2, 'f97a2f3ef0320b4c2a500645ec9d78d8.png');
 INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (11, '147258369', '7c4a8d09ca3762af61e59520943dc26494f8941b', '严xx', 1, '1234567896', 0, 0, '', '', '', '', '', 1, '2022-01-21 20:44:59', '2022-01-21 20:44:59', 2, 'default_pic.png');
 INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (12, '369258147', '7c4a8d09ca3762af61e59520943dc26494f8941b', '石xx', 1, '123456789', 0, 0, '', '', '', '', '', 1, '2022-01-21 20:46:54', '2022-01-21 20:46:54', 2, 'default_pic.png');
+INSERT INTO `users` (`id`, `student_no`, `password`, `name`, `sex`, `phone`, `academy_id`, `major_id`, `mail`, `location`, `native_place`, `emer_name`, `emer_phone`, `status`, `create_time`, `update_time`, `system_admin`, `user_pic`) VALUES (13, '987654321', '7c4a8d09ca3762af61e59520943dc26494f8941b', '小明', 1, '17369512485', 0, 0, '', '', '', '', '', 1, '2022-01-22 13:29:53', '2022-01-22 13:29:53', 2, 'default_pic.png');
 COMMIT;
 
 -- ----------------------------
