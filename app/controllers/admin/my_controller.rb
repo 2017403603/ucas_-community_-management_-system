@@ -44,16 +44,21 @@ module Admin
       user_society_ids2 = Level.by_student_no(params['student_no'])
       arr_society_ids2 = user_society_ids2.inject([]) {|result, n| result << n.society_id}
 
-      
-      if arr_society_ids.include?(society_id)
-        session[:society_id] = society_id
-        session.delete(:role)
-        session.delete(:menu_list_id)
-        session.delete(:allow_controller)
-        render json: { code:200, message: '切换成功', data: {url: '/admin/my?menu_id=5'} }
-      else
-        render json: { code:201, errors: '所选社团不存在' }
-      end
+      session[:society_id] = society_id
+      session.delete(:role)
+      session.delete(:menu_list_id)
+      session.delete(:allow_controller)
+      render json: { code:200, message: '切换成功', data: {url: '/admin/my?menu_id=5'} }
+
+      # if arr_society_ids.include?(society_id) or arr_society_ids2.include?(society_id)
+      #   session[:society_id] = society_id
+      #   session.delete(:role)
+      #   session.delete(:menu_list_id)
+      #   session.delete(:allow_controller)
+      #   render json: { code:200, message: '切换成功', data: {url: '/admin/my?menu_id=5'} }
+      # else
+      #   render json: { code:201, errors: '所选社团不存在' }
+      # end
     end
 
     # 社员通讯录
